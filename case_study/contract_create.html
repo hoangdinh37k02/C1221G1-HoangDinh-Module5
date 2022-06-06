@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Contract - Create</title>
+    <style>
+        body{
+            background-image: linear-gradient(rgba(106, 120, 125, 1), rgba(245,207,170, 1));
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="layout/layout.css">
+    <link rel="stylesheet" href="layout/dot-side.css">
+</head>
+<body id="body-pd" style="background-color: #e3dcd1; height:100%; margin-bottom: 60px;">
+<header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+        <div class="container-fluid">
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarExample01"
+                    aria-controls="navbarExample01"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="#" style="color: aliceblue">
+                            <i class='bx bx-grid-alt nav_icon'></i>
+                            <span class="nav_name">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: aliceblue">
+                            <i class='bx bxs-user nav_icon'></i> Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: aliceblue">
+                            <i class='bx bx-user nav_icon'></i> Employee</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: aliceblue">
+                            <i class='bx bxs-building-house nav_icon'></i> Facility</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: aliceblue">
+                            <i class='bx bx-copy-alt nav_icon'></i> Contract</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        <div class="container">
+            <div
+                    class="p-5 text-center bg-image"
+                    style="
+      background-image:url(https://dynamic-assets.hitachienergy.com/is/image/hitachiabbpowergrids/hitachi-power-grids-econiq-banner-3840x1500:64-18?wid=1440&hei=405&fmt=png-alpha&fit=crop%2C1) ;
+      height: 200px;
+    "
+            >
+                <div class="mask">
+                    <div class="d-flex justify-content-center align-items-center ">
+                        <div class="text-white">
+                            <div style="height: 20px"></div>
+                            <h1 class="mb-3">Contract</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="height-100 px-5 py-3">
+    <div class="container-fluid">
+        <div class="form-group row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+                <h2>Create New Contract</h2>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label text-right" for="customerType">Customer Name</label>
+            <div class="col-sm-4">
+                <select class="custom-select" id="customerName">
+                    <option value="">Choose Customer Name</option>
+                    <option value="1">Nguyen Văn A</option>
+                    <option value="2">Le Văn B</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label text-right" for="customerType">Employee Name</label>
+            <div class="col-sm-4">
+                <select class="custom-select" id="employeeName">
+                    <option value="">Choose Employee Name</option>
+                    <option value="1">Nguyen Văn A</option>
+                    <option value="2">Le Văn B</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label text-right" for="customerType">Service</label>
+            <div class="col-sm-4">
+                <select class="custom-select" id="serviceName">
+                    <option value="">Choose Service Name</option>
+                    <option value="1">Ocean Suite</option>
+                    <option value="2">Villa Ocean View</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label text-right" for="startDay">Start Day</label>
+            <div class="col-sm-4">
+                <input type="text" id="startDay" class="form-control"
+                       placeholder="Format: 26/01/2022">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label text-right" for="endDay">End Day</label>
+            <div class="col-sm-4">
+                <input type="text" id="endDay" class="form-control"
+                       placeholder="Format: 26/02/2022">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label text-right" for="deposit">Deposit</label>
+            <div class="col-sm-4">
+                <input type="text" id="deposit" class="form-control"
+                       placeholder="Ex: 1000000">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label text-right" for="total">Total Money</label>
+            <div class="col-sm-4">
+                <input type="text" id="total" class="form-control"
+                       placeholder="Ex: 5000000">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-5 col-form-label text-right"></label>
+            <div class="col-sm-6">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--    <div class="text-center p-5"></div>-->
+    <footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
+        <div class="container p-2"></div>
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-white" href="https://shopee.vn/nuochoaminidanang">FURAMA</a>
+        </div>
+    </footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+<script src="layout/sidebar.js"></script>
+</body>
+</html>
