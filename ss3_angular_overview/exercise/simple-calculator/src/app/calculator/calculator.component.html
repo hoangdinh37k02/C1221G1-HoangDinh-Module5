@@ -1,0 +1,73 @@
+<h1>Calculator</h1>
+<table class="table">
+
+  <tr>
+
+    <td><input type="text" class="form-control" type='text' id='result' style="text-align: right;"></td>
+
+    <td>
+
+      <input class="bt btn-danger" type='button' value = 'C' (click)="clearScreen()"/>
+
+    </td>
+
+  </tr>
+
+</table>
+
+<div class="container">
+
+  <input type="button" value="7" (click)="display('7')" />
+
+  <input type="button" value="8"  (click)="display('8')"/>
+
+  <input type="button" value="9" (click)="display('9')"/>
+
+  <input type="button" value="/" (click)="display('/')"/><br>
+
+  <input type="button" value="4" (click)="display('4')"/>
+
+  <input type="button" value="5" (click)="display('5')"/>
+
+  <input type="button" value="6" (click)="display('6')"/>
+
+  <input type="button" value="*" (click)="display('*')"/><br>
+
+  <input type="button" value="1" (click)="display('1')"/>
+
+  <input type="button" value="2" (click)="display('2')"/>
+
+  <input type="button" value="3" (click)="display('3')"/>
+
+  <input type="button" value="-" (click)="display('-')"/><br>
+
+  <input type="button" value="0" (click)="display('0')"/>
+
+  <input type="button" value="." (click)="display('.')"/>
+
+  <input type="button" value="=" (click)="solve()"/>
+
+  <input type="button" value="+" (click)="display('+')"/>
+
+</div>
+
+<!--<script>-->
+<!--  function display(val){-->
+
+<!--    document.getElementById('result').value += val-->
+
+<!--    return val-->
+
+<!--  }-->
+
+<!--  function solve() {-->
+<!--    let y = document.getElementById("result").value;-->
+<!--    let x = eval(y);-->
+<!--    document.getElementById("result").value = x;-->
+<!--    return x;-->
+<!--  }-->
+
+<!--  function clearScreen() {-->
+<!--    document.getElementById("result").value="";-->
+<!--  }-->
+<!--</script>-->

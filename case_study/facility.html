@@ -11,10 +11,8 @@
                   background-size: cover;
         }
     </style>
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
-          crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 </head>
@@ -38,25 +36,57 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item active">
                         <a class="nav-link" aria-current="page" href="#" style="color: aliceblue">
-                            <i class='bx bx-grid-alt nav_icon'></i>
+                            <i class='bx bx-home'></i>
                             <span class="nav_name">Home</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: aliceblue">
-                            <i class='bx bxs-user nav_icon'></i> Customer</a>
+                    <!--                    <li class="nav-item">-->
+                    <!--                        <a class="nav-link" href="#" style="color: aliceblue">-->
+                    <!--                            <i class='bx bxs-user nav_icon'></i> Customer</a>-->
+                    <!--                    </li>-->
+                    <li class="nav-item dropdown">
+                        <a style="color: aliceblue" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class='bx bxs-user nav_icon'></i> Customer
+                        </a>
+                        <ul class="dropdown-menu btn btn-muted" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/case_study/customer.html">List</a></li>
+                            <li><a class="dropdown-item" href="/case_study/customer_create.html">Create</a></li>
+                            <li><a class="dropdown-item" href="/case_study/customer_update.html">Update</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: aliceblue">
-                            <i class='bx bx-user nav_icon'></i> Employee</a>
+                    <!--                    <li class="nav-item">-->
+                    <!--                        <a class="nav-link" href="#" style="color: aliceblue">-->
+                    <!--                            <i class='bx bx-user nav_icon'></i> Employee</a>-->
+                    <!--                    </li>-->
+                    <!--                    <li class="nav-item">-->
+                    <!--                        <a class="nav-link" href="#" style="color: aliceblue">-->
+                    <!--                            <i class='bx bxs-building-house nav_icon'></i> Facility</a>-->
+                    <!--                    </li>-->
+                    <li class="nav-item dropdown">
+                        <a style="color: aliceblue" class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class='bx bx-user nav_icon'></i> Facility
+                        </a>
+                        <ul class="dropdown-menu btn btn-muted" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/case_study/facility.html">List</a></li>
+                            <li><a class="dropdown-item" href="#">Create</a></li>
+                            <li><a class="dropdown-item" href="/case_study/facility_update.html">Update</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: aliceblue">
-                            <i class='bx bxs-building-house nav_icon'></i> Facility</a>
+                    <!--                    <li class="nav-item">-->
+                    <!--                        <a class="nav-link" href="#" style="color: aliceblue">-->
+                    <!--                            <i class='bx bx-copy-alt nav_icon'></i> Contract</a>-->
+                    <!--                    </li>-->
+                    <li class="nav-item dropdown">
+                        <a style="color: aliceblue" class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class='bx bx-copy-alt nav_icon'></i> Contract
+                        </a>
+                        <ul class="dropdown-menu btn btn-muted" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/case_study/contract.html">List</a></li>
+                            <li><a class="dropdown-item" href="/case_study/contract_create.html">Create</a></li>
+                            <li><a class="dropdown-item" href="#">Update</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: aliceblue">
-                            <i class='bx bx-copy-alt nav_icon'></i> Contract</a>
-                    </li>
+
+
                 </ul>
             </div>
         </div>
@@ -75,7 +105,7 @@
                     <div class="d-flex justify-content-center align-items-center ">
                         <div class="text-white">
                             <div style="height: 20px"></div>
-                            <h1 class="mb-3">Facility</h1>
+                            <h1 class="mb-3">Header</h1>
                         </div>
                     </div>
                 </div>
@@ -330,20 +360,19 @@
         </div>
     </div>
 </div>
-<div class="text-center p-5"></div>
-<footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
-    <div class="container p-2"></div>
+<!--<div class="text-center p-5"></div>-->
+<!--<footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">-->
+<!--    <div class="container p-2"></div>-->
 
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2020 Copyright:
-        <a class="text-white" href="https://shopee.vn/nuochoaminidanang">FURAMA</a>
-    </div>
-</footer>
+<!--    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">-->
+<!--        © 2020 Copyright:-->
+<!--        <a class="text-white" href="https://shopee.vn/nuochoaminidanang">FURAMA</a>-->
+<!--    </div>-->
+<!--</footer>-->
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
-        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
