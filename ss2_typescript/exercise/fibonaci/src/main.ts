@@ -1,9 +1,18 @@
-let fibonacis:number[] =[1,1];
-let sum = 2;
-for (let i=0; i<18; i++){
-    let temp=fibonacis[i]+fibonacis[i+1];
-    fibonacis.push(temp);
-    sum+=fibonacis[i+2];
+let start: number = 0;
+let end: number = 1;
+let fibonacciArray: Array<number> = [start, end];
+let count: number = 20;
+let currentFibonacci: number;
+let sum: number = start + end;
+function fibonacci(count:number): Array<number> {
+    for (let i=end+1; i<count; i++){
+        currentFibonacci = end+start;
+        start=end;
+        end=currentFibonacci;
+        fibonacciArray.push(currentFibonacci);
+        sum+=currentFibonacci;
+    }
+    return fibonacciArray;
 }
-console.log(fibonacis);
-console.log(sum);
+console.log("Fibonacci Array: "+fibonacci(count));
+console.log("Sum of "+count+" Fibonacci Array's first number: "+ sum);
