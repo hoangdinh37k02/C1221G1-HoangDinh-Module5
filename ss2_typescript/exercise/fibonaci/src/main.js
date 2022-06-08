@@ -14,5 +14,17 @@ function fibonacci(count) {
     }
     return fibonacciArray;
 }
+// fibonacci(count).forEach(element =>{
+//     console.log(element);
+// })
+// let temp = fibonacci(count).filter(element => element!=1)
+// console.log(temp);
+var temp = fibonacci(count).map(function (element) {
+    if (element == 1) {
+        element = 0;
+    }
+    return element;
+});
+console.log(temp);
 console.log("Fibonacci Array: " + fibonacci(count));
-console.log("Sum of " + count + "Fibonacci Array's first number" + sum);
+console.log("Sum of " + count + " Fibonacci Array's first number: " + sum);
