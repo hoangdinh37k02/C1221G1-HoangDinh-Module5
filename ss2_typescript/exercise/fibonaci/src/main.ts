@@ -1,10 +1,10 @@
 let start: number = 0;
 let end: number = 1;
-let fibonacciArray: Array<number> = [start, end];
+let fibonacciArray: number[] = [start, end];
 let count: number = 20;
 let currentFibonacci: number;
 let sum: number = start + end;
-function fibonacci(count:number): Array<number> {
+function fibonacci(count:number): number[] {
     for (let i=end+1; i<count; i++){
         currentFibonacci = end+start;
         start=end;
