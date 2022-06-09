@@ -1,9 +1,9 @@
+
 <div class="height-100 px-5 py-3">
   <div class="container-fluid">
     <table class="table table-light table-bordered small">
       <thead class="thead thead-dark text-center">
       <tr>
-        <th scope="col">#</th>
         <th scope="col">Customer Code</th>
         <th scope="col">Name</th>
         <th scope="col">Gender</th>
@@ -17,127 +17,18 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>1</td>
-        <td>KH-1001</td>
-        <td>Nguyen Van An</td>
-        <td>Nam</td>
-        <td>01-01-2000</td>
-        <td>012345678</td>
-        <td>Da Nang</td>
-        <td>0778726119</td>
-        <td>an@gmail.com</td>
-        <td>Diamond</td>
-        <td>
-          <a class="editSpan text-black">
-            <i class='bx bx-wrench bx-border bx-sm'></i>
-          </a>
-          <button type="button" class="border-0 bg-transparent deleteSpan"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">
-            <i class='bx bx-trash bx-border bx-sm'></i>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>KH-1001</td>
-        <td>Nguyen Van An</td>
-        <td>Nam</td>
-        <td>01-01-2000</td>
-        <td>012345678</td>
-        <td>Da Nang</td>
-        <td>0778726119</td>
-        <td>an@gmail.com</td>
-        <td>Diamond</td>
-        <td>
-          <a class="editSpan text-black">
-            <i class='bx bx-wrench bx-border bx-sm'></i>
-          </a>
-          <button type="button" class="border-0 bg-transparent deleteSpan"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">
-            <i class='bx bx-trash bx-border bx-sm'></i>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>KH-1001</td>
-        <td>Nguyen Van An</td>
-        <td>Nam</td>
-        <td>01-01-2000</td>
-        <td>012345678</td>
-        <td>Da Nang</td>
-        <td>0778726119</td>
-        <td>an@gmail.com</td>
-        <td>Diamond</td>
-        <td>
-          <a class="editSpan text-black">
-            <i class='bx bx-wrench bx-border bx-sm'></i>
-          </a>
-          <button type="button" class="border-0 bg-transparent deleteSpan"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">
-            <i class='bx bx-trash bx-border bx-sm'></i>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>KH-1001</td>
-        <td>Nguyen Van An</td>
-        <td>Nam</td>
-        <td>01-01-2000</td>
-        <td>012345678</td>
-        <td>Da Nang</td>
-        <td>0778726119</td>
-        <td>an@gmail.com</td>
-        <td>Diamond</td>
-        <td>
-          <a class="editSpan text-black">
-            <i class='bx bx-wrench bx-border bx-sm'></i>
-          </a>
-          <button type="button" class="border-0 bg-transparent deleteSpan"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">
-            <i class='bx bx-trash bx-border bx-sm'></i>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>KH-1001</td>
-        <td>Nguyen Van An</td>
-        <td>Nam</td>
-        <td>01-01-2000</td>
-        <td>012345678</td>
-        <td>Da Nang</td>
-        <td>0778726119</td>
-        <td>an@gmail.com</td>
-        <td>Diamond</td>
-        <td>
-          <a class="editSpan text-black">
-            <i class='bx bx-wrench bx-border bx-sm'></i>
-          </a>
-          <button type="button" class="border-0 bg-transparent deleteSpan"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">
-            <i class='bx bx-trash bx-border bx-sm'></i>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>KH-1001</td>
-        <td>Nguyen Van An</td>
-        <td>Nam</td>
-        <td>01-01-2000</td>
-        <td>012345678</td>
-        <td>Da Nang</td>
-        <td>0778726119</td>
-        <td>an@gmail.com</td>
-        <td>Diamond</td>
+      <tr *ngFor="let customer of customers">
+        <td>{{customer.customerId}}</td>
+        <td>{{customer.customerName}}</td>
+        <td>{{customer.gender}}</td>
+        <td>{{customer.dateOfBirth}}</td>
+        <td>{{customer.identify}}</td>
+        <td>{{customer.address}}</td>
+        <td>{{customer.phone}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.type}}</td>
+
+
         <td>
           <a class="editSpan text-black">
             <i class='bx bx-wrench bx-border bx-sm'></i>
@@ -199,3 +90,4 @@
 </div>
 
     <div class="text-center p-5"></div>
+
