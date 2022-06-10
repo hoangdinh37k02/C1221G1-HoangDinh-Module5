@@ -1,13 +1,12 @@
 
 <div class="height-100 px-5 py-3">
-  <div class="container-fluid">
+  <div class="container-fluid ">
     <table class="table table-light table-bordered small">
       <thead class="thead thead-dark text-center">
       <tr>
         <th scope="col">#</th>
         <th scope="col">Contract Code</th>
         <th scope="col">Customer Name</th>
-        <th scope="col">Employee</th>
         <th scope="col">Service</th>
         <th scope="col">Start Date</th>
         <th scope="col">End Date</th>
@@ -17,121 +16,15 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>1</td>
-        <td>HD-1001</td>
-        <td>Lê Minh Son</td>
-        <td>Hoang Dinh</td>
-        <td>Ocean Suite</td>
-        <td>10-07-2022</td>
-        <td>30-07-2022</td>
-        <td>5000000</td>
-        <td>27000000</td>
-        <td>
-          <a class="editSpan text-black">
-            <i class='bx bx-wrench bx-border bx-sm'></i>
-          </a>
-          <button type="button" class="border-0 bg-transparent deleteSpan"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">
-            <i class='bx bx-trash bx-border bx-sm'></i>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>HD-1001</td>
-        <td>Lê Minh Son</td>
-        <td>Hoang Dinh</td>
-        <td>Ocean Suite</td>
-        <td>10-07-2022</td>
-        <td>30-07-2022</td>
-        <td>5000000</td>
-        <td>27000000</td>
-        <td>
-          <a class="editSpan text-black">
-            <i class='bx bx-wrench bx-border bx-sm'></i>
-          </a>
-          <button type="button" class="border-0 bg-transparent deleteSpan"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">
-            <i class='bx bx-trash bx-border bx-sm'></i>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>HD-1001</td>
-        <td>Lê Minh Son</td>
-        <td>Hoang Dinh</td>
-        <td>Ocean Suite</td>
-        <td>10-07-2022</td>
-        <td>30-07-2022</td>
-        <td>5000000</td>
-        <td>27000000</td>
-        <td>
-          <a class="editSpan text-black">
-            <i class='bx bx-wrench bx-border bx-sm'></i>
-          </a>
-          <button type="button" class="border-0 bg-transparent deleteSpan"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">
-            <i class='bx bx-trash bx-border bx-sm'></i>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>HD-1001</td>
-        <td>Lê Minh Son</td>
-        <td>Hoang Dinh</td>
-        <td>Ocean Suite</td>
-        <td>10-07-2022</td>
-        <td>30-07-2022</td>
-        <td>5000000</td>
-        <td>27000000</td>
-        <td>
-          <a class="editSpan text-black">
-            <i class='bx bx-wrench bx-border bx-sm'></i>
-          </a>
-          <button type="button" class="border-0 bg-transparent deleteSpan"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">
-            <i class='bx bx-trash bx-border bx-sm'></i>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>HD-1001</td>
-        <td>Lê Minh Son</td>
-        <td>Hoang Dinh</td>
-        <td>Ocean Suite</td>
-        <td>10-07-2022</td>
-        <td>30-07-2022</td>
-        <td>5000000</td>
-        <td>27000000</td>
-        <td>
-          <a class="editSpan text-black">
-            <i class='bx bx-wrench bx-border bx-sm'></i>
-          </a>
-          <button type="button" class="border-0 bg-transparent deleteSpan"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal">
-            <i class='bx bx-trash bx-border bx-sm'></i>
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>HD-1001</td>
-        <td>Lê Minh Son</td>
-        <td>Hoang Dinh</td>
-        <td>Ocean Suite</td>
-        <td>10-07-2022</td>
-        <td>30-07-2022</td>
-        <td>5000000</td>
-        <td>27000000</td>
+      <tr *ngFor="let contract of contracts, index as index">
+        <td>{{index+1}}</td>
+        <td>{{contract.contractId}}</td>
+        <td>{{contract.customerName}}</td>
+        <td>{{contract.serviceName}}</td>
+        <td>{{contract.startDay|date:'dd/MM/yyyy'}}</td>
+        <td>{{contract.endDay|date:'dd/MM/yyyy'}}</td>
+        <td>{{contract.deposit|currency:'VND'}}</td>
+        <td>{{contract.total|currency:'VND'}}</td>
         <td>
           <a class="editSpan text-black">
             <i class='bx bx-wrench bx-border bx-sm'></i>
