@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ContractService} from '../service/contract.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-contract-create',
@@ -9,7 +11,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class ContractCreateComponent implements OnInit {
   createContractForm: FormGroup;
 
-  constructor() {
+  constructor(private contractService: ContractService, private route: Router) {
     this.createContractForm = new FormGroup({
       contractId: new FormControl('', [Validators.required, Validators.pattern(/^[H]{1}[D]{1}[-]{1}[0-9]{4}$/)]),
       customerName: new FormControl('', Validators.required),
@@ -26,5 +28,9 @@ export class ContractCreateComponent implements OnInit {
 
   onSubmit() {
     console.log(this.createContractForm.value);
+    if (this.createContractForm.valid) {
+      this.contractService.addContract(this.createContractForm.value);
+      this.route.navigate(['/contract']);
+    }
   }
 }

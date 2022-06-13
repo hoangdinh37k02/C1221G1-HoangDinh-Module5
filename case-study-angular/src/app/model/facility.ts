@@ -4,9 +4,8 @@ export interface Facility {
   area: string;
   cost: string;
   maxPeople?: string;
-  type: string;
   url?: string;
-  serviceType: string;
+  serviceType?: string;
   standard?: string;
   other?: string;
   poolArea?: string;

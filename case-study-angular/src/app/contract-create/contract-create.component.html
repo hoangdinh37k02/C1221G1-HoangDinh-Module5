@@ -21,8 +21,8 @@ createContractForm.controls.contractId.touched">HD-XXXX (X is 0-9)</p>
     <div class="col-sm-4" formControlName="customerName">
       <select class="form-control" id="customerName" formControlName="customerName">
         <option value="">Choose Customer Name</option>
-        <option value="1">Nguyen Văn A</option>
-        <option value="2">Le Văn B</option>
+        <option value="Nguyen Văn A">Nguyen Văn A</option>
+        <option value="Le Văn B">Le Văn B</option>
       </select>
       <p style="color: red" *ngIf="createContractForm.controls.customerName.hasError('required')&&
 createContractForm.controls.customerName.touched">Not null</p>
@@ -34,8 +34,8 @@ createContractForm.controls.customerName.touched">Not null</p>
     <div class="col-sm-4">
       <select class="form-control" id="serviceName" formControlName="serviceName">
         <option value="">Choose Service Name</option>
-        <option value="1">Ocean Suite</option>
-        <option value="2">Villa Ocean View</option>
+        <option value="Ocean Suite">Ocean Suite</option>
+        <option value="Villa Ocean View">Villa Ocean View</option>
       </select>
       <p style="color: red" *ngIf="createContractForm.controls.serviceName.hasError('required')&&
 createContractForm.controls.serviceName.touched">Not null</p>

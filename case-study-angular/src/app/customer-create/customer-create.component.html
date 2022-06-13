@@ -36,8 +36,12 @@ createStudentFrom.controls.customerName.touched">Not null</p>
       <div class="col-sm-6">
         <label class="col-form-label" for="MaleRadio">Male</label>
         <input type="radio" id="MaleRadio" value="1" formControlName="gender">
+<!--        <p style="color: red" *ngIf="createStudentFrom.controls.gender.hasError('required')&&-->
+<!--createStudentFrom.controls.gender.touched">Not null</p>-->
         <label class="col-form-label" for="MaleRadio">Female</label>
         <input type="radio" id="FemaleRadio" value="0" formControlName="gender">
+        <p style="color: red" *ngIf="createStudentFrom.controls.gender.hasError('required')&&
+createStudentFrom.controls.gender.touched">Not null</p>
       </div>
     </div>
     <div class="row mb-3 form-group row">

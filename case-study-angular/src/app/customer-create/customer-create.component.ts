@@ -16,7 +16,7 @@ export class CustomerCreateComponent implements OnInit {
     this.createStudentFrom = new FormGroup({
       customerId: new FormControl('', [Validators.required, Validators.pattern(/^[K]{1}[H]{1}[-]{1}[0-9]{4}$/)]),
       customerName: new FormControl('', Validators.required),
-      gender: new FormControl(),
+      gender: new FormControl('', Validators.required),
       dateOfBirth: new FormControl(),
       identify: new FormControl('', Validators.pattern(/^([0-9]{9})|([0-9]{12})$/)),
       address: new FormControl(),

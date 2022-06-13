@@ -9,7 +9,7 @@
     <div class="row d-flex justify-content-center">
       <div class="col-7">
         <div class="row mb-3">
-          <div class="col-3 form-group">
+          <div class="col-5 form-group">
             <input style="width: 100%" type="text" class="form-control" placeholder="Service Code" formControlName="facilityId"
                    autocomplete="off"/>
             <p style="color: red" *ngIf="createFacilityForm.controls.facilityId.hasError('required')&&
@@ -17,7 +17,7 @@ createFacilityForm.controls.facilityId.touched">Not null</p>
             <p style="color: red" *ngIf="createFacilityForm.controls.facilityId.hasError('pattern')&&
 createFacilityForm.controls.facilityId.touched">DV-XXXX (X is 0-9)</p>
           </div>
-          <div class="col-5 form-group">
+          <div class="col-7 form-group">
             <input style="width: 100%" type="text" class="form-control" placeholder="Service Name" formControlName="facilityName"
                    autocomplete="off"/>
             <p style="color: red" *ngIf="createFacilityForm.controls.facilityName.hasError('required')&&
@@ -25,6 +25,9 @@ createFacilityForm.controls.facilityName.touched">Not null</p>
             <p style="color: red" *ngIf="createFacilityForm.controls.facilityName.hasError('pattern')&&
 createFacilityForm.controls.facilityName.touched">Not has number</p>
           </div>
+
+        </div>
+        <div class="row mb-3">
           <div class="col-4 form-group">
             <input style="width: 100%" class="form-control" type="text" placeholder="Area" formControlName="area"
                    autocomplete="off"/>
@@ -33,8 +36,6 @@ createFacilityForm.controls.area.touched">Not null</p>
             <p style="color: red" *ngIf="createFacilityForm.controls.area.hasError('pattern')&&
 createFacilityForm.controls.area.touched">area is positive</p>
           </div>
-        </div>
-        <div class="row mb-3">
           <div class="col-4 form-group">
             <input style="width: 100%" class="form-control" type="text" placeholder="Cost" formControlName="cost"
                    autocomplete="off"/>
@@ -47,16 +48,7 @@ createFacilityForm.controls.cost.touched">Not null</p>
             <p style="color: red" *ngIf="createFacilityForm.controls.maxPeople.hasError('required')&&
 createFacilityForm.controls.maxPeople.touched">Not null</p>
           </div>
-          <div class="col-4 form-group">
-            <select class="form-control" formControlName="type">
-              <option value="">--Choose Rent Type--</option>
-              <option value="Day">Day</option>
-              <option value="Week">Week</option>
-              <option value="Month">Month</option>
-            </select>
-            <p style="color: red" *ngIf="createFacilityForm.controls.type.hasError('required')&&
-createFacilityForm.controls.type.touched">Not null</p>
-          </div>
+
         </div>
         <div class="row mb-3">
           <div class="col-12 form-group">
