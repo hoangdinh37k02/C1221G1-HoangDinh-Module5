@@ -12,6 +12,7 @@ import { ContractComponent } from './contract/contract.component';
 import { ContractCreateComponent } from './contract-create/contract-create.component';
 import {RoutingModule} from './routing.module';
 import {RouterModule} from '@angular/router';
+import { DeleteModalComponent } from './delete-modal/delete-modal.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {RouterModule} from '@angular/router';
     CustomerComponent,
     CustomerCreateComponent,
     ContractComponent,
-    ContractCreateComponent
+    ContractCreateComponent,
+    DeleteModalComponent
   ],
   imports: [
     BrowserModule,
