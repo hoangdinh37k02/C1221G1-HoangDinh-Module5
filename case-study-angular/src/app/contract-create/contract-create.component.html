@@ -5,35 +5,40 @@
       <h2>Create New Contract</h2>
     </div>
   </div>
-
+  <form [formGroup]="createContractForm" (ngSubmit)="onSubmit()">
+    <div class="row mb-3 form-group row">
+      <label class="col-sm-4 col-form-label text-end" >Contract Code</label>
+      <div class="col-sm-4">
+        <input type="text"  class="form-control" formControlName="contractId">
+        <p style="color: red" *ngIf="createContractForm.controls.contractId.hasError('required')&&
+createContractForm.controls.contractId.touched">Not null</p>
+        <p style="color: red" *ngIf="createContractForm.controls.contractId.hasError('pattern')&&
+createContractForm.controls.contractId.touched">HD-XXXX (X is 0-9)</p>
+      </div>
+    </div>
   <div class="row mb-3 form-group row">
     <label class="col-sm-4 col-form-label text-end" for="customerName">Customer Name</label>
-    <div class="col-sm-4">
-      <select class="form-control" id="customerName">
+    <div class="col-sm-4" formControlName="customerName">
+      <select class="form-control" id="customerName" formControlName="customerName">
         <option value="">Choose Customer Name</option>
         <option value="1">Nguyen Văn A</option>
         <option value="2">Le Văn B</option>
       </select>
+      <p style="color: red" *ngIf="createContractForm.controls.customerName.hasError('required')&&
+createContractForm.controls.customerName.touched">Not null</p>
     </div>
   </div>
-  <div class="row mb-3 form-group row">
-    <label class="col-sm-4 col-form-label text-end" for="employeeName">Employee Name</label>
-    <div class="col-sm-4">
-      <select class="form-control" id="employeeName">
-        <option value="">Choose Employee Name</option>
-        <option value="1">Nguyen Văn A</option>
-        <option value="2">Le Văn B</option>
-      </select>
-    </div>
-  </div>
+
   <div class="row mb-3 form-group row">
     <label class="col-sm-4 col-form-label text-end" for="serviceName">Service</label>
     <div class="col-sm-4">
-      <select class="form-control" id="serviceName">
+      <select class="form-control" id="serviceName" formControlName="serviceName">
         <option value="">Choose Service Name</option>
         <option value="1">Ocean Suite</option>
         <option value="2">Villa Ocean View</option>
       </select>
+      <p style="color: red" *ngIf="createContractForm.controls.serviceName.hasError('required')&&
+createContractForm.controls.serviceName.touched">Not null</p>
     </div>
   </div>
 
@@ -41,29 +46,41 @@
 
     <label class="col-sm-4 col-form-label text-end" for="startDay">Start Day</label>
     <div class="col-sm-4">
-      <input type="text" id="startDay" class="form-control"
+      <input type="date" id="startDay" class="form-control" formControlName="startDay"
              placeholder="Format: 26/01/2022">
+      <p style="color: red" *ngIf="createContractForm.controls.startDay.hasError('required')&&
+createContractForm.controls.startDay.touched">Not null</p>
     </div>
   </div>
   <div class="row mb-3 form-group row">
     <label class="col-sm-4 col-form-label text-end" for="endDay">End Day</label>
     <div class="col-sm-4">
-      <input type="text" id="endDay" class="form-control"
+      <input type="date" id="endDay" class="form-control" formControlName="endDay"
              placeholder="Format: 26/02/2022">
+      <p style="color: red" *ngIf="createContractForm.controls.endDay.hasError('required')&&
+createContractForm.controls.endDay.touched">Not null</p>
     </div>
   </div>
   <div class="row mb-3 form-group row">
     <label class="col-sm-4 col-form-label text-end" for="deposit">Deposit</label>
     <div class="col-sm-4">
-      <input type="text" id="deposit" class="form-control"
+      <input type="text" id="deposit" class="form-control" formControlName="deposit"
              placeholder="Ex: 1000000">
+      <p style="color: red" *ngIf="createContractForm.controls.deposit.hasError('required')&&
+createContractForm.controls.deposit.touched">Not null</p>
+      <p style="color: red" *ngIf="createContractForm.controls.deposit.hasError('pattern')&&
+createContractForm.controls.deposit.touched">Deposit is a number and positive</p>
     </div>
   </div>
   <div class="row mb-3 form-group row">
     <label class="col-sm-4 col-form-label text-end" for="total">Total Money</label>
     <div class="col-sm-4">
-      <input type="text" id="total" class="form-control"
+      <input type="text" id="total" class="form-control" formControlName="total"
              placeholder="Ex: 5000000">
+      <p style="color: red" *ngIf="createContractForm.controls.total.hasError('required')&&
+createContractForm.controls.total.touched">Not null</p>
+      <p style="color: red" *ngIf="createContractForm.controls.total.hasError('pattern')&&
+createContractForm.controls.total.touched">Total is a number and positive</p>
     </div>
   </div>
 
@@ -73,6 +90,7 @@
       <button type="submit" class="btn btn-primary">Submit</button>
     </div>
   </div>
+  </form>
 </div>
 
 <div class="text-center p-5"></div>

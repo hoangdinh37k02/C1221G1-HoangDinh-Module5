@@ -6,6 +6,7 @@ export interface Facility {
   maxPeople?: string;
   type: string;
   url?: string;
+  serviceType: string;
   standard?: string;
   other?: string;
   poolArea?: string;
