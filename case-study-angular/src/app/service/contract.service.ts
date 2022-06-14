@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import {Contract} from '../model/contract';
+import {element} from 'protractor';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContractService {
   contracts: Contract [] = [];
+  // contractAfterDelete: Contract [] = [];
   constructor() {
     this.contracts.push({contractId: 'HD-1001', customerName: 'Nguyen Thanh Son', serviceName: 'Ocean Suite', startDay: '2022-03-14',
       endDay: '2022-04-22', deposit: '5000000', total: '10000000'});
@@ -23,5 +25,10 @@ export class ContractService {
   }
   addContract(contract: Contract) {
     this.contracts.push(contract);
+  }
+  deleteContract(contract: Contract) {
+    const contractAfterDelete: Contract [] = this.contracts.filter(element1 => element1 !== contract);
+
+    this.contracts = contractAfterDelete;
   }
 }

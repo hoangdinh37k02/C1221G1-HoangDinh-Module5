@@ -12,8 +12,10 @@ import { ContractComponent } from './contract/contract.component';
 import { ContractCreateComponent } from './contract-create/contract-create.component';
 import {RoutingModule} from './routing.module';
 import {RouterModule} from '@angular/router';
-import { DeleteModalComponent } from './delete-modal/delete-modal.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { DeleteCustomnerComponent } from './modal/delete-customner/delete-customner.component';
+import { DeleteFacilityComponent } from './modal/delete-facility/delete-facility.component';
+import { DeleteContractComponent } from './modal/delete-contract/delete-contract.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {ReactiveFormsModule} from '@angular/forms';
     CustomerCreateComponent,
     ContractComponent,
     ContractCreateComponent,
-    DeleteModalComponent
+    DeleteCustomnerComponent,
+    DeleteFacilityComponent,
+    DeleteContractComponent
   ],
   imports: [
     BrowserModule,

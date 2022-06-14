@@ -9,6 +9,7 @@ import {CustomerService} from '../service/customer.service';
 })
 export class CustomerComponent implements OnInit {
   customers: Customer[] = [];
+  customerName: string;
   constructor(private customerService: CustomerService) {
     this.customers = customerService.getList();
   }
@@ -16,4 +17,7 @@ export class CustomerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  sendCustomerToDelete(customerName: string) {
+    this.customerName = customerName;
+  }
 }

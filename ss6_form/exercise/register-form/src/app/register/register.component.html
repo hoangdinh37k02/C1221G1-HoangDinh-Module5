@@ -48,10 +48,10 @@ registerForm.controls.passwordGroup.touched">Must be the same with password</p>
 
       <div class="mb-3">
         <label class="form-label">Age</label>
-        <input type="text" class="form-control" aria-describedby="emailHelp"  formControlName="age">
+        <input type="number" class="form-control" aria-describedby="emailHelp"  formControlName="age">
         <p style="color: red" *ngIf="registerForm.controls.age.hasError('required')&&
 registerForm.controls.age.touched">Not null<p>
-        <p style="color: red" *ngIf="registerForm.controls.age.hasError('pattern')&&
+        <p style="color: red" *ngIf="registerForm.controls.age.hasError('min')&&
 registerForm.controls.age.touched">age must be a number and over 18<p>
 
       </div>

@@ -3,7 +3,7 @@ export interface Candidate {
   password: string;
   passwordConfirm: string;
   gender: string;
-  age: string;
+  age: number;
   phone: string;
   email: string;
   country: string;
