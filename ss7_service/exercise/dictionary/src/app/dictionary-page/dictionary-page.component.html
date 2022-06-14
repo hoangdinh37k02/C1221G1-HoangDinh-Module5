@@ -1,1 +1,4 @@
-<p>dictionary-page works!</p>
+<h1>Dictionary</h1>
+<div *ngFor="let s of iWords">
+  <p><a [routerLink]="['/detail', s.word]">{{s.word}}</a></p>
+</div>

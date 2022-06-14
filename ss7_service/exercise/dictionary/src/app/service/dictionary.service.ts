@@ -5,7 +5,7 @@ import {IWord} from '../iword';
   providedIn: 'root'
 })
 export class DictionaryService {
-  iWord: IWord [] = [{
+  iWords: IWord [] = [{
     word: 'hello',
     mean: 'xin chào'
   }, {
@@ -22,4 +22,15 @@ export class DictionaryService {
     mean: 'động vật'
   }];
   constructor() { }
+  getAll() {
+    return this.iWords;
+  }
+
+  findById(word: string) {
+    for (let i = 0; i < this.iWords.length ; i++) {
+      if (word === this.iWords[i].word){
+        return this.iWords[i];
+      }
+    }
+  }
 }
