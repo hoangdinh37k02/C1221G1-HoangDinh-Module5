@@ -31,7 +31,7 @@
           </a>
           <button type="button" class="border-0 bg-transparent deleteSpan"
                   data-bs-toggle="modal"
-                  data-bs-target="#exampleModal" (click)="sendContractToDelete(contract.contractId, contract)">
+                  data-bs-target="#exampleModal" (click)="sendContractToDelete(contract.contractId)">
             <i class='bx bx-trash bx-border bx-sm'></i>
           </button>
         </td>
@@ -65,6 +65,6 @@
 
 </div>
 
-<app-delete-contract [contractIdTpoDelete]="contractIdToDelete"></app-delete-contract>
+<app-delete-contract [contractIdToDelete]="contractIdToDelete"></app-delete-contract>
     <div class="text-center p-5"></div>
 

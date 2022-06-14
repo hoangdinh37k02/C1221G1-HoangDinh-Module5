@@ -15,7 +15,8 @@ const routes: Routes = [
   {path: 'customer', component: CustomerComponent},
   {path: 'customer-create', component: CustomerCreateComponent},
   {path: 'contract', component: ContractComponent},
-  {path: 'contract-create', component: ContractCreateComponent}
+  {path: 'contract-create', component: ContractCreateComponent},
+  {path: 'modal/delete-contract:id', component: ContractCreateComponent}
 ];
 
 @NgModule({

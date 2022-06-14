@@ -26,9 +26,11 @@ export class ContractService {
   addContract(contract: Contract) {
     this.contracts.push(contract);
   }
-  deleteContract(contract: Contract) {
-    const contractAfterDelete: Contract [] = this.contracts.filter(element1 => element1 !== contract);
-
-    this.contracts = contractAfterDelete;
+  deleteContract(id: string) {
+    for (let i = 0; i < this.contracts.length ; i++) {
+      if (id === this.contracts[i].contractId) {
+        this.contracts.splice(i, 1);
+      }
+    }
   }
 }

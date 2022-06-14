@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Contract} from '../../model/contract';
+import {ContractService} from '../../service/contract.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-delete-contract',
@@ -8,13 +10,13 @@ import {Contract} from '../../model/contract';
 })
 export class DeleteContractComponent implements OnInit {
   @Input() contractIdToDelete: string;
-  @Input() contractToDelete: Contract;
-  constructor() { }
+  constructor(private contractService: ContractService, private route: Router) { }
 
   ngOnInit(): void {
   }
 
-  deleteContract() {
-    return this.contractIdToDelete;
+  delete(contractIdToDelete: string) {
+    this.contractService.deleteContract(contractIdToDelete);
+    this.route.navigateByUrl('/contract');
   }
 }

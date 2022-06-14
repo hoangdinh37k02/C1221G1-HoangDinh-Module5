@@ -10,7 +10,6 @@ import {ContractService} from '../service/contract.service';
 export class ContractComponent implements OnInit {
   contracts: Contract [] = [];
   contractIdToDelete: string;
-  contract: Contract;
   constructor(private contractService: ContractService) {
     this.contracts = contractService.getList();
     }
@@ -18,9 +17,7 @@ export class ContractComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sendContractToDelete(contractId: string, contractToDelete: Contract) {
+  sendContractToDelete(contractId: string) {
     this.contractIdToDelete = contractId;
-    this.contract = contractToDelete;
-    // console.log(this.contract);
   }
 }
