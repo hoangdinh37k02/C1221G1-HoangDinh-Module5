@@ -16,7 +16,7 @@
       <tbody>
       <tr *ngFor="let customer of customers|paginate : { itemsPerPage: 5, currentPage: p },index as index" >
         <td>{{index+1}}</td>
-        <td>{{customer.customerId}}</td>
+        <td>{{customer.id}}</td>
         <td>{{customer.customerName}}</td>
         <td>{{customer.dateOfBirth|date:"dd/MM/yyyy"}}</td>
         <td>{{customer.phone}}</td>
@@ -24,12 +24,12 @@
 
 
         <td>
-          <a class="editSpan text-black" [routerLink]="['/customer/update', customer.customerId]">
+          <a class="editSpan text-black" [routerLink]="['/customer/update', customer.id]">
             <i class='bx bx-wrench bx-border bx-sm'></i>
           </a>
           <button type="button" class="border-0 bg-transparent deleteSpan"
                   data-bs-toggle="modal"
-                  data-bs-target="#exampleModal" (click)="sendCustomerToDelete(customer.customerId)">
+                  data-bs-target="#exampleModal" (click)="sendCustomerToDelete(customer.id)">
             <i class='bx bx-trash bx-border bx-sm'></i>
           </button>
         </td>

@@ -34,35 +34,47 @@ export class CustomerService {
     //   email: 'nhan@gmail.com', type: 'Silver'});
 
   }
-  getList() {
-    return this.customers;
-  }
+  // getList() {
+  //   return this.customers;
+  // }
   getAll(): Observable<Customer[]> {
     return this.http.get<Customer[]>(API_URL + '/customers');
   }
-  addCustomer(customer: Customer) {
-    this.customers.push(customer);
+  // addCustomer(customer: Customer) {
+  //   this.customers.push(customer);
+  // }
+  addCustomer(customer): Observable<Customer> {
+    return this.http.post<Customer>(API_URL + '/customers', customer);
   }
-  deleteContract(id: string) {
-    for (let i = 0; i < this.customers.length ; i++) {
-      if (id === this.customers[i].customerId) {
-        this.customers.splice(i, 1);
-      }
-    }
+  // deleteContract(id: string) {
+  //   for (let i = 0; i < this.customers.length ; i++) {
+  //     if (id === this.customers[i].id) {
+  //       this.customers.splice(i, 1);
+  //     }
+  //   }
+  // }
+  deleteCustomer(id: string): Observable<Customer> {
+    return this.http.delete<Customer>(`${API_URL}/customers/${  id}`);
   }
-  findById(id: string): Customer {
-    for (let i = 0; i < this.customers.length ; i++) {
-      if (id === this.customers[i].customerId) {
-        return this.customers[i];
-      }
-    }
+  // findById(id: string): Customer {
+  //   for (let i = 0; i < this.customers.length ; i++) {
+  //     if (id === this.customers[i].id) {
+  //       return this.customers[i];
+  //     }
+  //   }
+  // }
+  findById(id: string): Observable<Customer> {
+    return this.http.get<Customer>(`${API_URL}/customers/${id}`);
   }
 
-  updateCustomer(customer) {
-    for (let i = 0; i < this.customers.length ; i++) {
-      if (customer.customerId === this.customers[i].customerId) {
-        this.customers[i] = customer;
-      }
-    }
+  // updateCustomer(customer) {
+  //   for (let i = 0; i < this.customers.length ; i++) {
+  //     if (customer.id === this.customers[i].id) {
+  //       this.customers[i] = customer;
+  //     }
+  //   }
+  // }
+  updateCustomer(id: string, customer: Customer): Observable<Customer> {
+    return this.http.put<Customer>(`${API_URL}/customers/${id}`, customer);
   }
 }

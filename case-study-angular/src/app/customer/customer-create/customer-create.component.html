@@ -10,11 +10,11 @@
 
         <label class="col-sm-4 col-form-label text-end" for="name">Customer Code</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" formControlName="customerId">
-          <p style="color: red" *ngIf="createStudentFrom.controls.customerId.hasError('required')&&
-createStudentFrom.controls.customerId.touched">Not null</p>
-          <p style="color: red" *ngIf="createStudentFrom.controls.customerId.hasError('pattern')&&
-createStudentFrom.controls.customerId.touched">KH-XXXX (X is 0-9)</p>
+          <input type="text" class="form-control" formControlName="id">
+          <p style="color: red" *ngIf="createStudentFrom.controls.id.hasError('required')&&
+createStudentFrom.controls.id.touched">Not null</p>
+          <p style="color: red" *ngIf="createStudentFrom.controls.id.hasError('pattern')&&
+createStudentFrom.controls.id.touched">KH-XXXX (X is 0-9)</p>
         </div>
       </div>
 

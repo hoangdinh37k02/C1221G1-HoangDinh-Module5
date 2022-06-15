@@ -12,37 +12,15 @@
       "type": "Diamond"
     },
     {
-      "id": "KH-1002",
-      "customerName": "Nguyen Van A",
-      "gender": "Nam",
-      "dateOfBirth": "2000/03/23",
-      "identify": "191795123",
-      "address": "12 Nguyen Hoang",
-      "phone": "0905333671",
-      "email": "a@gmail.com",
-      "type": "Diamond"
-    },
-    {
-      "id": "KH-1003",
-      "customerName": "Nguyen Van A",
-      "gender": "Nam",
-      "dateOfBirth": "2000/03/23",
-      "identify": "191795123",
-      "address": "12 Nguyen Hoang",
-      "phone": "0905333671",
-      "email": "a@gmail.com",
-      "type": "Diamond"
-    },
-    {
-      "id": "KH-1004",
-      "customerName": "Nguyen Van A",
-      "gender": "Nam",
-      "dateOfBirth": "2000/03/23",
-      "identify": "191795123",
-      "address": "12 Nguyen Hoang",
-      "phone": "0905333671",
-      "email": "a@gmail.com",
-      "type": "Diamond"
+      "id": "KH-2002",
+      "customerName": "Nguyen Thanh Huyen",
+      "gender": "0",
+      "dateOfBirth": "2022-06-04",
+      "identify": "201999918",
+      "address": "1243 Ta Quang Buu",
+      "phone": "0913666567",
+      "email": "huyen@gmail.com",
+      "type": "Gold"
     }
   ],
   "comments": [

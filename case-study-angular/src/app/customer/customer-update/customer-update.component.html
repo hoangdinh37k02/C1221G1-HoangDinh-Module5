@@ -2,9 +2,9 @@
 <div class="height-100 px-5 py-3">
   <div class="container-fluid">
     <div class="text-center">
-      <h2>Update Customer: <b class="text-danger">{{customerForm.get('customerId').value}}</b></h2>
+      <h2>Update Customer: <b class="text-danger">{{customerForm.get('id').value}}</b></h2>
     </div>
-    <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="customerForm" (ngSubmit)="onSubmit(customerForm.get('id').value)">
 
 
       <div class="row mb-3 form-group row">
