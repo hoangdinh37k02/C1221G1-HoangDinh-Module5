@@ -7,14 +7,14 @@
       </div>
       <div class="modal-body">
         <div>Do you want to delete this customer<BR>
-        {{customerName}}</div>
+        {{customerIdToDelete}}</div>
         <div class="text-danger">
           <hr>
           WARNING: YOU CAN NOT ROLLBACK AFTER DELETE!!!</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Delete</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete(customerIdToDelete)">Delete</button>
       </div>
     </div>
   </div>

@@ -10,13 +10,12 @@ import {Router} from '@angular/router';
 })
 export class DeleteContractComponent implements OnInit {
   @Input() contractIdToDelete: string;
-  constructor(private contractService: ContractService, private route: Router) { }
+  constructor(private contractService: ContractService) { }
 
   ngOnInit(): void {
   }
 
   delete(contractIdToDelete: string) {
     this.contractService.deleteContract(contractIdToDelete);
-    this.route.navigateByUrl('/contract');
   }
 }

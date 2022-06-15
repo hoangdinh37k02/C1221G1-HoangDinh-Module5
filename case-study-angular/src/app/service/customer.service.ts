@@ -37,4 +37,26 @@ export class CustomerService {
   addCustomer(customer: Customer) {
     this.customers.push(customer);
   }
+  deleteContract(id: string) {
+    for (let i = 0; i < this.customers.length ; i++) {
+      if (id === this.customers[i].customerId) {
+        this.customers.splice(i, 1);
+      }
+    }
+  }
+  findById(id: string): Customer {
+    for (let i = 0; i < this.customers.length ; i++) {
+      if (id === this.customers[i].customerId) {
+        return this.customers[i];
+      }
+    }
+  }
+
+  updateCustomer(customer) {
+    for (let i = 0; i < this.customers.length ; i++) {
+      if (customer.customerId === this.customers[i].customerId) {
+        this.customers[i] = customer;
+      }
+    }
+  }
 }

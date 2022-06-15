@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {FacilityService} from '../../service/facility.service';
 
 @Component({
   selector: 'app-delete-facility',
@@ -7,9 +8,12 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class DeleteFacilityComponent implements OnInit {
   @Input() facilityToDelete: string;
-  constructor() { }
+  constructor(private facilityService: FacilityService) { }
 
   ngOnInit(): void {
   }
 
+  delete(facilityToDelete: string) {
+    this.facilityService.deleteFacility(facilityToDelete);
+  }
 }

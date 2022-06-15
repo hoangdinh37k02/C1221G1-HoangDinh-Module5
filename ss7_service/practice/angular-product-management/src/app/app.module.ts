@@ -9,6 +9,12 @@ import {AppRoutingModule} from './app-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import { ProductUpdateComponent } from './product/product-update/product-update.component';
 import { ProductDeleteComponent } from './product/product-delete/product-delete.component';
+import {HttpClientModule} from '@angular/common/http';
+import { CategoryListComponent } from './category/category-list/category-list.component';
+import { CategoryCreateComponent } from './category/category-create/category-create.component';
+import { CategoryEditComponent } from './category/category-edit/category-edit.component';
+import { CategoryDeleteComponent } from './category/category-delete/category-delete.component';
+
 
 @NgModule({
   declarations: [
@@ -16,13 +22,18 @@ import { ProductDeleteComponent } from './product/product-delete/product-delete.
     ProductListComponent,
     ProductCreateComponent,
     ProductUpdateComponent,
-    ProductDeleteComponent
+    ProductDeleteComponent,
+    CategoryListComponent,
+    CategoryCreateComponent,
+    CategoryEditComponent,
+    CategoryDeleteComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,171 @@
+
+<div class="height-100 px-5 py-3">
+  <div class="container">
+
+    <div class="text-center mb-3">
+      <h2>Update Facility: <b class="text-danger">{{facilityForm.get('facilityId').value}}</b></h2>
+    </div>
+    <form [formGroup]="facilityForm" (ngSubmit)="onSubmit()">
+      <div class="row d-flex justify-content-center">
+        <div class="col-7">
+          <div class="row mb-3">
+
+            <div class="col-12 form-group">
+              <input style="width: 100%" type="text" class="form-control" placeholder="Service Name" formControlName="facilityName"
+                     autocomplete="off"/>
+              <p style="color: red" *ngIf="facilityForm.controls.facilityName.hasError('required')&&
+facilityForm.controls.facilityName.touched">Not null</p>
+              <p style="color: red" *ngIf="facilityForm.controls.facilityName.hasError('pattern')&&
+facilityForm.controls.facilityName.touched">Not has number</p>
+            </div>
+
+          </div>
+          <div class="row mb-3">
+            <div class="col-4 form-group">
+              <input style="width: 100%" class="form-control" type="text" placeholder="Area" formControlName="area"
+                     autocomplete="off"/>
+              <p style="color: red" *ngIf="facilityForm.controls.area.hasError('required')&&
+facilityForm.controls.area.touched">Not null</p>
+              <p style="color: red" *ngIf="facilityForm.controls.area.hasError('pattern')&&
+facilityForm.controls.area.touched">area is positive</p>
+            </div>
+            <div class="col-4 form-group">
+              <input style="width: 100%" class="form-control" type="text" placeholder="Cost" formControlName="cost"
+                     autocomplete="off"/>
+              <p style="color: red" *ngIf="facilityForm.controls.cost.hasError('required')&&
+facilityForm.controls.cost.touched">Not null</p>
+            </div>
+            <div class="col-4 form-group">
+              <input style="width: 100%" class="form-control" type="text" placeholder="Max People" formControlName="maxPeople"
+                     autocomplete="off"/>
+              <p style="color: red" *ngIf="facilityForm.controls.maxPeople.hasError('required')&&
+facilityForm.controls.maxPeople.touched">Not null</p>
+            </div>
+
+          </div>
+          <div class="row mb-3">
+            <div class="col-12 form-group">
+              <input style="width: 100%" class="form-control" type="text" placeholder="Image Url" formControlName="url"
+                     autocomplete="off"/>
+              <p style="color: red" *ngIf="facilityForm.controls.url.hasError('required')&&
+facilityForm.controls.url.touched">Not null</p>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-12 form-group">
+              <select id="facilityTypeSelect" class="form-control" formControlName="serviceType">
+                <option value="">--Choose Service--</option>
+                <option value="Villa">Villa</option>
+                <option value="House">House</option>
+                <option value="Room">Room</option>
+              </select>
+              <p style="color: red" *ngIf="facilityForm.controls.serviceType.hasError('required')&&
+facilityForm.controls.serviceType.touched">Not null</p>
+            </div>
+          </div>
+          <div class="row mb-3" id="villaInputs">
+            <div class="col-3 form-group">
+              <input style="width: 100%" type="text" class="form-control" placeholder="Standard Room" formControlName="standard"
+                     autocomplete="off"/>
+              <p style="color: red" *ngIf="facilityForm.controls.standard.hasError('required')&&
+facilityForm.controls.standard.touched">Not null</p>
+            </div>
+            <div class="col-4 form-group">
+              <input style="width: 100%" type="text" class="form-control" placeholder="Other Convenient" formControlName="other"
+                     autocomplete="off"/>
+              <p style="color: red" *ngIf="facilityForm.controls.other.hasError('required')&&
+facilityForm.controls.other.touched">Not null</p>
+            </div>
+            <div class="col-3 form-group">
+              <input style="width: 100%" type="text" class="form-control" placeholder="Pool Area" formControlName="poolArea"
+                     autocomplete="off"/>
+              <p style="color: red" *ngIf="facilityForm.controls.poolArea.hasError('required')&&
+facilityForm.controls.poolArea.touched">Not null</p>
+              <p style="color: red" *ngIf="facilityForm.controls.poolArea.hasError('pattern')&&
+facilityForm.controls.poolArea.touched">Pool area is positive</p>
+            </div>
+            <div class="col-2 form-group">
+              <input style="width: 100%" type="text" class="form-control" placeholder="Floors" formControlName="floor"
+                     autocomplete="off"/>
+              <p style="color: red" *ngIf="facilityForm.controls.floor.hasError('required')&&
+facilityForm.controls.floor.touched">Not null</p>
+              <p style="color: red" *ngIf="facilityForm.controls.floor.hasError('pattern')&&
+facilityForm.controls.floor.touched">Number of floor is positive</p>
+            </div>
+          </div>
+          <!--        <div class="row mb-3" id="houseInputs">-->
+          <!--          <div class="col-4 form-group">-->
+          <!--            <input style="width: 100%" type="text" class="form-control" placeholder="Standard Room"-->
+          <!--                   autocomplete="off"/>-->
+          <!--          </div>-->
+          <!--          <div class="col-6 form-group">-->
+          <!--            <input style="width: 100%" type="text" class="form-control" placeholder="Other Convenient"-->
+          <!--                   autocomplete="off"/>-->
+          <!--          </div>-->
+          <!--          <div class="col-2 form-group">-->
+          <!--            <input style="width: 100%" class="form-control" type="text" placeholder="Floors"-->
+          <!--                   autocomplete="off"/>-->
+          <!--          </div>-->
+          <!--        </div>-->
+          <!--        <div class="row mb-3" id="roomInputs">-->
+          <!--          <div class="col-12 form-group">-->
+          <!--            <input style="width: 100%" type="text" class="form-control" placeholder="Free Service"-->
+          <!--                   autocomplete="off"/>-->
+          <!--          </div>-->
+          <!--        </div>-->
+        </div>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="text-center p-5"></div>
+
+<script>
+  let $facilityTypeSelect = $('#facilityTypeSelect');
+  let $villaInputs = $('#villaInputs');
+  let $houseInputs = $('#houseInputs');
+  let $roomInputs = $('#roomInputs');
+  $(document).ready(function () {
+    hideAll();
+    $facilityTypeSelect.change(function () {
+      if (this.value == 1) {
+        $villaInputs.show();
+        $villaInputs.find('input').prop('disabled', false);
+        $houseInputs.hide();
+        $houseInputs.find('input').prop('disabled', true);
+        $roomInputs.hide();
+        $roomInputs.find('input').prop('disabled', true);
+      } else if (this.value == 2) {
+        $villaInputs.hide();
+        $villaInputs.find('input').prop('disabled', true);
+        $houseInputs.show();
+        $houseInputs.find('input').prop('disabled', false);
+        $roomInputs.hide();
+        $roomInputs.find('input').prop('disabled', true);
+      } else if (this.value == 3) {
+        $villaInputs.hide();
+        $villaInputs.find('input').prop('disabled', true);
+        $houseInputs.hide();
+        $houseInputs.find('input').prop('disabled', true);
+        $roomInputs.show();
+        $roomInputs.find('input').prop('disabled', false);
+      } else {
+        hideAll();
+      }
+    });
+  });
+  function hideAll() {
+    $villaInputs.hide();
+    $villaInputs.find('input').prop('disabled', true);
+    $houseInputs.hide();
+    $houseInputs.find('input').prop('disabled', true);
+    $roomInputs.hide();
+    $roomInputs.find('input').prop('disabled', true);
+  }
+</script>
+
+

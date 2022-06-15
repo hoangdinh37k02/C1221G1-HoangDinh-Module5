@@ -9,14 +9,15 @@ import {Product} from '../../model/product';
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,
+  ) { }
 
   ngOnInit(): void {
     this.getAll();
   }
 
   getAll() {
-    this.products = this.productService.getAll();
+
   }
 
   delete(id: number) {

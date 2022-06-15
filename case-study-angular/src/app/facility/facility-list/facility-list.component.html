@@ -1,0 +1,45 @@
+
+
+
+<div style="height: 56px"></div>
+<div class="container" >
+  <div class="container col-11">
+    <div class="row">
+      <div class="col-xl-4" *ngFor="let facility of facilities |paginate : { itemsPerPage: 6, currentPage: p }">
+        <div class="card" >
+          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img [src]="facility.url"
+              class="img-fluid"/>
+          </div>
+
+          <div class="card-body" style="float: right">
+            <h5 class="card-title">{{facility.facilityName}}</h5>
+            <p >Room size: {{facility.area}} <span> m</span><sup>2</sup></p>
+            <h5><span  class="badge bg-danger">Price: {{facility.cost}}</span></h5> <br>
+
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" (click)="sendFacilityToDelete(facility.facilityId)">
+              <i class='bx bx-trash'></i>
+            </button>
+
+            <a style="margin-left: 5px" class="btn btn-primary" [routerLink]="['/facility-update', facility.facilityId]">
+              <i class='bx bx-wrench'></i>
+            </a>
+            <a href="#!" style="float: right">Know more</a>
+          </div>
+        </div>
+        <div style="height: 20px"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div style="justify-content: space-around;display: flex;">
+  <pagination-controls (pageChange)="p = $event" class=" page-item"></pagination-controls>
+</div>
+
+<app-delete-facility [facilityToDelete]="facilityToDelete"></app-delete-facility>
+<div class="text-center p-5"></div>
+
+

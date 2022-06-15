@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {Contract} from '../model/contract';
 import {element} from 'protractor';
+import {Customer} from '../model/customer';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContractService {
   contracts: Contract [] = [];
-  // contractAfterDelete: Contract [] = [];
   constructor() {
     this.contracts.push({contractId: 'HD-1001', customerName: 'Nguyen Thanh Son', serviceName: 'Ocean Suite', startDay: '2022-03-14',
       endDay: '2022-04-22', deposit: '5000000', total: '10000000'});
@@ -30,6 +30,21 @@ export class ContractService {
     for (let i = 0; i < this.contracts.length ; i++) {
       if (id === this.contracts[i].contractId) {
         this.contracts.splice(i, 1);
+      }
+    }
+  }
+  findById(id: string): Contract {
+    for (let i = 0; i < this.contracts.length ; i++) {
+      if (id === this.contracts[i].contractId) {
+        return this.contracts[i];
+      }
+    }
+  }
+
+  updateContract(contract) {
+    for (let i = 0; i < this.contracts.length ; i++) {
+      if (contract.contractId === this.contracts[i].contractId) {
+        this.contracts[i] = contract;
       }
     }
   }
