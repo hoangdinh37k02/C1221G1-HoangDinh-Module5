@@ -10,6 +10,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {CustomerModule} from './customer/customer.module';
 import {FacilityModule} from './facility/facility.module';
 import {ContractModule} from './contract/contract.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {ContractModule} from './contract/contract.module';
     RouterModule,
     ReactiveFormsModule,
     FacilityModule,
-    ContractModule
+    ContractModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

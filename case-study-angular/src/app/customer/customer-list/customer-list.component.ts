@@ -12,12 +12,13 @@ export class CustomerListComponent implements OnInit {
   customerIdToDelete: string;
   p: string | number = 0;
   constructor(private customerService: CustomerService) {
-    this.customers = customerService.getList();
+    this.customerService.getAll().subscribe(customers => {
+      this.customers = customers;
+    });
   }
 
   ngOnInit(): void {
   }
-
   sendCustomerToDelete(customerId: string) {
     this.customerIdToDelete = customerId;
   }
