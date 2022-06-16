@@ -3,5 +3,9 @@
 }
 
 .slider-container {
-  img {max-width: 100%;display: block;}
+  overflow: hidden;
+img {
+  max-width: 100%;
+  display: block;
+}
 }
