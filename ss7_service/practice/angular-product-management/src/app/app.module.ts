@@ -14,6 +14,7 @@ import { CategoryListComponent } from './category/category-list/category-list.co
 import { CategoryCreateComponent } from './category/category-create/category-create.component';
 import { CategoryEditComponent } from './category/category-edit/category-edit.component';
 import { CategoryDeleteComponent } from './category/category-delete/category-delete.component';
+import {SharedModule} from './shared/shared.module';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { CategoryDeleteComponent } from './category/category-delete/category-del
     RouterModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -30,10 +30,15 @@ export class FacilityCreateComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.createFacilityForm.value);
     if (this.createFacilityForm.valid) {
-      this.facilityService.addFacility(this.createFacilityForm.value);
-      this.route.navigate(['/facility/list']);
+      this.facilityService.addFacility(this.createFacilityForm.value).subscribe(() => {
+        this.createFacilityForm.reset();
+        alert('Successful');
+      }, e => {
+        console.log(e);
+      }, () => {
+        this.route.navigate(['/facility/list']);
+      });
     }
   }
 }

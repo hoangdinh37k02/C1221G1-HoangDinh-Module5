@@ -18,20 +18,20 @@
       <tbody>
       <tr *ngFor="let contract of contracts|paginate : { itemsPerPage: 5, currentPage: p }, index as index">
         <td>{{index+1}}</td>
-        <td>{{contract.contractId}}</td>
-        <td>{{contract.customerName}}</td>
-        <td>{{contract.serviceName}}</td>
+        <td>{{contract.id}}</td>
+        <td>{{contract.customer.customerName}}</td>
+        <td>{{contract.facility.facilityName}}</td>
         <td>{{contract.startDay|date:'dd/MM/yyyy'}}</td>
         <td>{{contract.endDay|date:'dd/MM/yyyy'}}</td>
         <td>{{contract.deposit|currency:'VND'}}</td>
         <td>{{contract.total|currency:'VND'}}</td>
         <td>
-          <a class="editSpan text-black" [routerLink]="['/contract-list-update',contract.contractId]">
+          <a class="editSpan text-black" [routerLink]="['/contract-list-update',contract.id]">
             <i class='bx bx-wrench bx-border bx-sm'></i>
           </a>
           <button type="button" class="border-0 bg-transparent deleteSpan"
                   data-bs-toggle="modal"
-                  data-bs-target="#exampleModal" (click)="sendContractToDelete(contract.contractId)">
+                  data-bs-target="#exampleModal" (click)="sendContractToDelete(contract.id)">
             <i class='bx bx-trash bx-border bx-sm'></i>
           </button>
         </td>
@@ -68,6 +68,26 @@
   <pagination-controls (pageChange)="p = $event" class=" page-item"></pagination-controls>
 </div>
 
-<app-delete-contract [contractIdToDelete]="contractIdToDelete"></app-delete-contract>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirm</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>Do you want to delete this contract: <BR>
+          {{contractIdToDelete}}</div>
+        <div class="text-danger">
+          <hr>
+          WARNING: YOU CAN NOT ROLLBACK AFTER DELETE!!!</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete(contractIdToDelete)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
     <div class="text-center p-5"></div>
 

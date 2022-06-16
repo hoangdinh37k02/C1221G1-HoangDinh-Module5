@@ -14,13 +14,13 @@ export class DeleteCustomnerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  delete(customerIdToDelete: string) {
-    this.customerService.deleteCustomer(customerIdToDelete).subscribe(() => {
-      alert('Successful');
-    }, e => {
-      console.log(e);
-    }, () => {
-      this.route.navigate(['/customer/list']);
-    });
-  }
+  // delete(customerIdToDelete: string) {
+  //   this.customerService.deleteCustomer(customerIdToDelete).subscribe(() => {
+  //     alert('Successful');
+  //   }, e => {
+  //     console.log(e);
+  //   }, () => {
+  //     this.route.navigate(['/customer/list']);
+  //   });
+  // }
 }

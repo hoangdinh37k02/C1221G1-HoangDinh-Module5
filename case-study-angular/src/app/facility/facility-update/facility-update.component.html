@@ -3,9 +3,9 @@
   <div class="container">
 
     <div class="text-center mb-3">
-      <h2>Update Facility: <b class="text-danger">{{facilityForm.get('facilityId').value}}</b></h2>
+      <h2>Update Facility: <b class="text-danger">{{facilityForm.get('id').value}}</b></h2>
     </div>
-    <form [formGroup]="facilityForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="facilityForm" (ngSubmit)="onSubmit(facilityForm.get('id').value)">
       <div class="row d-flex justify-content-center">
         <div class="col-7">
           <div class="row mb-3">

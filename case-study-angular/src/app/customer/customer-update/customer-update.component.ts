@@ -15,7 +15,7 @@ export class CustomerUpdateComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private customerService: CustomerService, private route: Router) {
     activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = paramMap.get('id');
-      this.getCategory(this.id);
+      this.getCustomer(this.id);
     });
   }
 
@@ -33,7 +33,7 @@ export class CustomerUpdateComponent implements OnInit {
     // });
   }
 
-  getCategory(id: string) {
+  getCustomer(id: string) {
     return this.customerService.findById(id).subscribe(detailCustomer => {
       this.customerForm = new FormGroup({
         id: new FormControl(detailCustomer.id),

@@ -23,9 +23,9 @@ export class ContractUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.contractForm = new FormGroup({
-      contractId: new FormControl(this.detailContract.contractId),
-      customerName: new FormControl(this.detailContract.customerName, Validators.required),
-      serviceName: new FormControl(this.detailContract.serviceName, Validators.required),
+      contractId: new FormControl(this.detailContract.id),
+      customerName: new FormControl(this.detailContract.customer, Validators.required),
+      serviceName: new FormControl(this.detailContract.customer, Validators.required),
       startDay: new FormControl(this.detailContract.startDay, Validators.required),
       endDay: new FormControl(this.detailContract.endDay, Validators.required),
       deposit: new FormControl(this.detailContract.deposit, [Validators.required, Validators.pattern(/^[1-9]{1}[0-9]{0,}$/)]),

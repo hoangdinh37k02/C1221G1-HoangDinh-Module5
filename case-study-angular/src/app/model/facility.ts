@@ -1,5 +1,5 @@
 export interface Facility {
-  facilityId: string;
+  id: string;
   facilityName: string;
   area: string;
   cost: string;

@@ -12,38 +12,56 @@ import {Customer} from '../../model/customer';
   styleUrls: ['./facility-update.component.css']
 })
 export class FacilityUpdateComponent implements OnInit {
-  detailFacility: Facility;
+  id: string;
   facilityForm: FormGroup;
   constructor(private activatedRoute: ActivatedRoute, private facilityService: FacilityService, private route: Router) {
     activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
-      const id = paramMap.get('id');
-      if (id != null) {
-        this.detailFacility = this.facilityService.findById(id);
-      }
+      this.id = paramMap.get('id');
+      this.getFacility(this.id);
     });
   }
 
   ngOnInit(): void {
-    this.facilityForm = new FormGroup({
-      facilityId: new FormControl(this.detailFacility.facilityId),
-      facilityName: new FormControl(this.detailFacility.facilityName, [Validators.required, Validators.pattern(/^([^0-9]*)$/)]),
-      area: new FormControl(this.detailFacility.area, [Validators.required, Validators.pattern(/^[1-9]{1}[0-9]{0,}$/)]),
-      cost: new FormControl(this.detailFacility.cost, Validators.required),
-      maxPeople: new FormControl(this.detailFacility.maxPeople, Validators.required),
-      url: new FormControl(this.detailFacility.url, Validators.required),
-      serviceType: new FormControl(this.detailFacility.serviceType, Validators.required),
-      standard: new FormControl(this.detailFacility.standard, Validators.required),
-      other: new FormControl(this.detailFacility.other, Validators.required),
-      poolArea: new FormControl(this.detailFacility.poolArea, [Validators.required, Validators.pattern(/^[1-9]{1}[0-9]{0,}$/)]),
-      floor: new FormControl(this.detailFacility.floor, [Validators.required, Validators.pattern(/^[1-9]{1}[0-9]{0,}$/)]),
+    // this.facilityForm = new FormGroup({
+    //   id: new FormControl(this.detailFacility.id),
+    //   facilityName: new FormControl(this.detailFacility.facilityName, [Validators.required, Validators.pattern(/^([^0-9]*)$/)]),
+    //   area: new FormControl(this.detailFacility.area, [Validators.required, Validators.pattern(/^[1-9]{1}[0-9]{0,}$/)]),
+    //   cost: new FormControl(this.detailFacility.cost, Validators.required),
+    //   maxPeople: new FormControl(this.detailFacility.maxPeople, Validators.required),
+    //   url: new FormControl(this.detailFacility.url, Validators.required),
+    //   serviceType: new FormControl(this.detailFacility.serviceType, Validators.required),
+    //   standard: new FormControl(this.detailFacility.standard, Validators.required),
+    //   other: new FormControl(this.detailFacility.other, Validators.required),
+    //   poolArea: new FormControl(this.detailFacility.poolArea, [Validators.required, Validators.pattern(/^[1-9]{1}[0-9]{0,}$/)]),
+    //   floor: new FormControl(this.detailFacility.floor, [Validators.required, Validators.pattern(/^[1-9]{1}[0-9]{0,}$/)]),
+    // });
+  }
+  getFacility(id: string) {
+    return this.facilityService.findById(id).subscribe(detailFacility => {
+      this.facilityForm = new FormGroup({
+        id: new FormControl(detailFacility.id),
+        facilityName: new FormControl(detailFacility.facilityName, [Validators.required, Validators.pattern(/^([^0-9]*)$/)]),
+        area: new FormControl(detailFacility.area, [Validators.required, Validators.pattern(/^[1-9]{1}[0-9]{0,}$/)]),
+        cost: new FormControl(detailFacility.cost, Validators.required),
+        maxPeople: new FormControl(detailFacility.maxPeople, Validators.required),
+        url: new FormControl(detailFacility.url, Validators.required),
+        serviceType: new FormControl(detailFacility.serviceType, Validators.required),
+        standard: new FormControl(detailFacility.standard, Validators.required),
+        other: new FormControl(detailFacility.other, Validators.required),
+        poolArea: new FormControl(detailFacility.poolArea, [Validators.required, Validators.pattern(/^[1-9]{1}[0-9]{0,}$/)]),
+        floor: new FormControl(detailFacility.floor, [Validators.required, Validators.pattern(/^[1-9]{1}[0-9]{0,}$/)]),
+      });
     });
   }
 
-  onSubmit() {
+  onSubmit(id: string) {
     const facility: Facility = this.facilityForm.value;
-    if (this.facilityForm.valid) {
-      this.facilityService.updateFacility(facility);
-      this.route.navigateByUrl('/facility/list');
-    }
+    this.facilityService.updateFacility(id, facility).subscribe(() => {
+      alert('successful');
+    }, e => {
+      console.log(e);
+    }, () => {
+      this.route.navigate(['/facility/list']);
+    });
   }
 }
