@@ -1,6 +1,21 @@
 <H1 class="text-center">Contract List</H1>
 <div class="height-100 px-5 py-3">
-  <div class="container-fluid ">
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <input type="text" class="form-control" placeholder="Search by service name" #searchByServiceName>
+      </div>
+      <div class="col-3">
+        <select class="form-control" #searchByCustomer>
+          <option value="">Select Customer</option>
+          <option *ngFor="let customer of customers" [ngValue]="customer">{{customer.customerName}}</option>
+        </select>
+      </div>
+      <div class="col-5 text-end">
+        <button type="submit" class="btn btn-primary" (click)="search()">Search</button>
+      </div>
+    </div>
+    <div style="height: 10px"></div>
     <table class="table table-light table-bordered small">
       <thead class="thead thead-dark text-center">
       <tr>
@@ -26,7 +41,7 @@
         <td>{{contract.deposit|currency:'VND'}}</td>
         <td>{{contract.total|currency:'VND'}}</td>
         <td>
-          <a class="editSpan text-black" [routerLink]="['/contract-list-update',contract.id]">
+          <a class="editSpan text-black" [routerLink]="['/contract/update',contract.id]">
             <i class='bx bx-wrench bx-border bx-sm'></i>
           </a>
           <button type="button" class="border-0 bg-transparent deleteSpan"
@@ -38,6 +53,7 @@
       </tr>
       </tbody>
     </table>
+    <h3 *ngIf="contracts.length === 0" class="text-center">Not found</h3>
 <!--    <div class="pagination-control">-->
 <!--      <div class="row d-flex justify-content-center">-->
 <!--        <nav aria-label="Page navigation example"-->

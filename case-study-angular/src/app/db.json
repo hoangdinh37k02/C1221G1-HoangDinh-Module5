@@ -9,13 +9,68 @@
       "address": "DN",
       "phone": "0903000789",
       "email": "dinh@gmail.com",
+      "type": "Diamond"
+    },
+    {
+      "id": "KH-1235",
+      "customerName": "Le Son",
+      "gender": "1",
+      "dateOfBirth": "2022-06-09",
+      "identify": "201988712",
+      "address": "872 Nguyen Hoang",
+      "phone": "0906667162",
+      "email": "hoang@gmail.com",
+      "type": "Gold"
+    },
+    {
+      "id": "KH-9011",
+      "customerName": "Tran Thi Thuy",
+      "gender": "0",
+      "dateOfBirth": "1990-06-14",
+      "identify": "201788721",
+      "address": "81 Bui Thi Xuan",
+      "phone": "0918776789",
+      "email": "xuan@gmail.com",
+      "type": "Silver"
+    },
+    {
+      "id": "KH-9899",
+      "customerName": "Bui Viet Thinh",
+      "gender": "1",
+      "dateOfBirth": "1987-06-04",
+      "identify": "201456712",
+      "address": "DN",
+      "phone": "0903555627",
+      "email": "thinh@gmail.com",
       "type": "Platinum"
+    },
+    {
+      "id": "KH-1526",
+      "customerName": "Tran Van Hoang",
+      "gender": "1",
+      "dateOfBirth": "1997-06-02",
+      "identify": "201988901",
+      "address": "HN",
+      "phone": "0913777891",
+      "email": "hoang@gmail.com",
+      "type": "Member"
+    },
+    {
+      "id": "KH-6157",
+      "customerName": "Le Thanh ngan",
+      "gender": "0",
+      "dateOfBirth": "1992-06-15",
+      "identify": "191786712",
+      "address": "QN",
+      "phone": "0916777892",
+      "email": "ngan@gmail.com",
+      "type": "Gold"
     }
   ],
   "facilities": [
     {
       "id": "DV-1001",
-      "facilityName": "Ocean Suite",
+      "facilityName": "Ocean Room Twin",
       "area": "80",
       "cost": "1800$",
       "maxPeople": "1",
@@ -41,24 +96,42 @@
     },
     {
       "id": "DV-1003",
-      "facilityName": "Ocean Suite",
+      "facilityName": "Vip Room",
       "area": "85",
-      "cost": "1500$",
-      "url": "https://cf.bstatic.com/xdata/images/hotel/max500/158485055.jpg?k=53cf752193cfe01139e3ae869e3015a3eb6b711f199a54132b63df7cf5b6ba41&o=&hp=1"
+      "cost": "1000$",
+      "maxPeople": null,
+      "url": "https://cf.bstatic.com/xdata/images/hotel/max500/158485055.jpg?k=53cf752193cfe01139e3ae869e3015a3eb6b711f199a54132b63df7cf5b6ba41&o=&hp=1",
+      "serviceType": null,
+      "standard": null,
+      "other": null,
+      "poolArea": null,
+      "floor": null
     },
     {
       "id": "DV-1004",
-      "facilityName": "Ocean Suite",
-      "area": "85",
-      "cost": "1500$",
-      "url": "http://reviewvilla.vn/wp-content/uploads/2022/03/Ancient-House-Resort-Hoi-An-8.jpg"
+      "facilityName": "Villa Suite",
+      "area": "150",
+      "cost": "2500$",
+      "maxPeople": null,
+      "url": "http://reviewvilla.vn/wp-content/uploads/2022/03/Ancient-House-Resort-Hoi-An-8.jpg",
+      "serviceType": null,
+      "standard": null,
+      "other": null,
+      "poolArea": null,
+      "floor": null
     },
     {
       "id": "DV-1005",
-      "facilityName": "Ocean Suite",
-      "area": "85",
-      "cost": "1500$",
-      "url": "https://statics.vinpearl.com/hinh-anh-vinpearl-resort-spa-nha-trang-bay-3.jpg"
+      "facilityName": "Hot House",
+      "area": "30",
+      "cost": "700$",
+      "maxPeople": null,
+      "url": "https://statics.vinpearl.com/hinh-anh-vinpearl-resort-spa-nha-trang-bay-3.jpg",
+      "serviceType": null,
+      "standard": null,
+      "other": null,
+      "poolArea": null,
+      "floor": null
     },
     {
       "id": "DV-1007",
@@ -70,9 +143,15 @@
     {
       "id": "DV-1008",
       "facilityName": "Ocean Suite",
-      "area": "85",
-      "cost": "1500$",
-      "url": "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2018/09/Anja-Beach-Resort-Spa-vntrip3.jpg"
+      "area": "50",
+      "cost": "1200$",
+      "maxPeople": null,
+      "url": "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2018/09/Anja-Beach-Resort-Spa-vntrip3.jpg",
+      "serviceType": null,
+      "standard": null,
+      "other": null,
+      "poolArea": null,
+      "floor": null
     }
   ],
   "contracts": [
@@ -110,27 +189,120 @@
     {
       "id": "HD-1002",
       "customer": {
-        "id": "KH-2002",
-        "customerName": "Hoang Dinh",
+        "id": "KH-1235",
+        "customerName": "Le Son",
         "gender": "1",
-        "dateOfBirth": "2022-06-23",
-        "identify": "191795022",
-        "address": "DN",
-        "phone": "0903000789",
-        "email": "dinh@gmail.com",
-        "type": "Platinum"
+        "dateOfBirth": "2022-06-09",
+        "identify": "201988712",
+        "address": "872 Nguyen Hoang",
+        "phone": "0906667162",
+        "email": "hoang@gmail.com",
+        "type": "Gold"
       },
       "facility": {
-        "id": "DV-1004",
-        "facilityName": "Ocean Suite",
+        "id": "DV-1005",
+        "facilityName": "Hot House",
         "area": "85",
         "cost": "1500$",
-        "url": "http://reviewvilla.vn/wp-content/uploads/2022/03/Ancient-House-Resort-Hoi-An-8.jpg"
+        "maxPeople": null,
+        "url": "https://statics.vinpearl.com/hinh-anh-vinpearl-resort-spa-nha-trang-bay-3.jpg",
+        "serviceType": null,
+        "standard": null,
+        "other": null,
+        "poolArea": null,
+        "floor": null
       },
       "startDay": "2022-06-20",
       "endDay": "2022-06-28",
       "deposit": "1000000",
-      "total": "12000000"
+      "total": "15000000"
+    },
+    {
+      "id": "HD-2003",
+      "customer": {
+        "id": "KH-9011",
+        "customerName": "Tran Thi Thuy",
+        "gender": "0",
+        "dateOfBirth": "1990-06-14",
+        "identify": "201788721",
+        "address": "81 Bui Thi Xuan",
+        "phone": "0918776789",
+        "email": "xuan@gmail.com",
+        "type": "Silver"
+      },
+      "facility": {
+        "id": "DV-1001",
+        "facilityName": "Ocean Room Twin",
+        "area": "80",
+        "cost": "1800$",
+        "maxPeople": "1",
+        "url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/9c/59/dc/the-baga-beach-resort.jpg?w=900&h=-1&s=1",
+        "serviceType": "Villa",
+        "standard": "1",
+        "other": "1",
+        "poolArea": "1",
+        "floor": "1"
+      },
+      "startDay": "2022-06-09",
+      "endDay": "2022-06-11",
+      "deposit": "5000000",
+      "total": "15000000"
+    },
+    {
+      "id": "HD-2001",
+      "customer": {
+        "id": "KH-1526",
+        "customerName": "Tran Van Hoang",
+        "gender": "1",
+        "dateOfBirth": "1997-06-02",
+        "identify": "201988901",
+        "address": "HN",
+        "phone": "0913777891",
+        "email": "hoang@gmail.com",
+        "type": "Member"
+      },
+      "facility": {
+        "id": "DV-1004",
+        "facilityName": "Villa Suite",
+        "area": "150",
+        "cost": "2500$",
+        "maxPeople": null,
+        "url": "http://reviewvilla.vn/wp-content/uploads/2022/03/Ancient-House-Resort-Hoi-An-8.jpg",
+        "serviceType": null,
+        "standard": null,
+        "other": null,
+        "poolArea": null,
+        "floor": null
+      },
+      "startDay": "2022-06-02",
+      "endDay": "2022-06-11",
+      "deposit": "500000",
+      "total": "7000000"
+    },
+    {
+      "id": "HD-8821",
+      "customer": {
+        "id": "KH-9899",
+        "customerName": "Bui Viet Thinh",
+        "gender": "1",
+        "dateOfBirth": "1987-06-04",
+        "identify": "201456712",
+        "address": "DN",
+        "phone": "0903555627",
+        "email": "thinh@gmail.com",
+        "type": "Platinum"
+      },
+      "facility": {
+        "id": "DV-1007",
+        "facilityName": "Ocean Suite",
+        "area": "85",
+        "cost": "1500$",
+        "url": "https://www.turtlebayresort.com/sites/default/files/2022-04/Standard_Ocean_View_King_web.jpg"
+      },
+      "startDay": "2022-06-01",
+      "endDay": "2022-06-11",
+      "deposit": "2500000",
+      "total": "20000000"
     }
   ]
 }

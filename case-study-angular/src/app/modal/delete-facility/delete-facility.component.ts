@@ -14,9 +14,9 @@ export class DeleteFacilityComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // delete(facilityToDelete: string) {
-  //   this.facilityService.deleteFacility(facilityToDelete);
-  // }
+  delete(facilityToDelete: string) {
+    this.facilityService.deleteFacility(facilityToDelete);
+  }
   // delete(customerIdToDelete: string) {
   //   this.facilityService.deleteFacility(customerIdToDelete).subscribe(() => {
   //     alert('Successful');

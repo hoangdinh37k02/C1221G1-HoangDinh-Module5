@@ -29,8 +29,11 @@ export class ContractService {
   getAll(): Observable<Contract[]> {
     return this.http.get<Contract[]>(API_URL + '/contracts');
   }
-  addContract(contract: Contract) {
-    this.contracts.push(contract);
+  // addContract(contract: Contract) {
+  //   this.contracts.push(contract);
+  // }
+  addContract(contract): Observable<Contract> {
+    return this.http.post<Contract>(API_URL + '/contracts', contract);
   }
   // deleteContract(id: string) {
   //   for (let i = 0; i < this.contracts.length ; i++) {
@@ -42,19 +45,29 @@ export class ContractService {
   deleteContract(id: string): Observable<Contract> {
     return this.http.delete<Contract>(`${API_URL}/contracts/${  id}`);
   }
-  findById(id: string): Contract {
-    for (let i = 0; i < this.contracts.length ; i++) {
-      if (id === this.contracts[i].id) {
-        return this.contracts[i];
-      }
-    }
+  // findById(id: string): Contract {
+  //   for (let i = 0; i < this.contracts.length ; i++) {
+  //     if (id === this.contracts[i].id) {
+  //       return this.contracts[i];
+  //     }
+  //   }
+  // }
+  findById(id: string): Observable<Contract> {
+    return this.http.get<Contract>(`${API_URL}/contracts/${id}`);
   }
 
-  updateContract(contract) {
-    for (let i = 0; i < this.contracts.length ; i++) {
-      if (contract.contractId === this.contracts[i].id) {
-        this.contracts[i] = contract;
-      }
-    }
+  // updateContract(contract) {
+  //   for (let i = 0; i < this.contracts.length ; i++) {
+  //     if (contract.contractId === this.contracts[i].id) {
+  //       this.contracts[i] = contract;
+  //     }
+  //   }
+  // }
+  updateContract(id: string, contract: Contract): Observable<Contract> {
+    return this.http.put<Contract>(`${API_URL}/contracts/${id}`, contract);
+  }
+
+  search(value1: any, value2: any): Observable<Contract[]> {
+    return this.http.get<Contract[]>(`${API_URL}/contracts?facility.facilityName_like=${value1}&customer.customerName_like=${value2}`);
   }
 }

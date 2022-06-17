@@ -1,0 +1,72 @@
+<div class="height-100 px-5 py-3">
+  <div class="container-fluid">
+    <div class="text-center">
+      <h2>Create New Transaction</h2>
+    </div>
+    <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+
+      <div class="row mb-3 form-group row">
+
+        <label class="col-sm-4 col-form-label text-end" >Transaction Code</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" formControlName="transactionCode">
+          <p style="color: red" *ngIf="transactionForm.controls.transactionCode.hasError('required')&&
+transactionForm.controls.transactionCode.touched">Not null</p>
+          <p style="color: red" *ngIf="transactionForm.controls.transactionCode.hasError('pattern')&&
+transactionForm.controls.transactionCode.touched">MGD-XXXX (X is 0-9)</p>
+        </div>
+      </div>
+
+      <div class="row mb-3 form-group row">
+        <label class="col-sm-4 col-form-label text-end" for="customerName">Customer</label>
+        <div class="col-sm-4" formControlName="customer">
+          <select class="form-control" id="customerName" formControlName="customer">
+            <option value="">Choose Customer</option>
+            <option *ngFor="let customer of customers" [ngValue]="customer">{{customer.customerCode}}</option>
+          </select>
+          <p style="color: red" *ngIf="transactionForm.controls.customer.hasError('required')&&
+transactionForm.controls.customer.touched">Not null</p>
+        </div>
+      </div>
+
+      <div class="row mb-3 form-group row">
+        <label class="col-sm-4 col-form-label text-end" for="dayOfBirth">Transaction Date</label>
+        <div class="col-sm-4">
+          <input type="date" id="dayOfBirth" class="form-control" formControlName="transactionDay">
+        </div>
+      </div>
+      <div class="row mb-3 form-group row">
+        <label class="col-sm-4 col-form-label text-end" for="customerType">Transaction Type</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="customerType" formControlName="type">
+            <option value="">Choose Customer Type</option>
+            <option value="Đất">Đất</option>
+            <option value="Nhà và đất">Nhà và đất</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-3 form-group row">
+        <label class="col-sm-4 col-form-label text-end" for="nationalId">Price (per m<sup>2</sup>)</label>
+        <div class="col-sm-4">
+          <input type="text" id="nationalId" class="form-control" formControlName="price">
+          <p style="color: red" *ngIf="transactionForm.controls.price.hasError('pattern')&&
+transactionForm.controls.price.touched">price is positive</p>
+        </div>
+      </div>
+      <div class="row mb-3 form-group row">
+        <label class="col-sm-4 col-form-label text-end" for="nationalId">Square (m<sup>2</sup>)</label>
+        <div class="col-sm-4">
+          <input type="text"  class="form-control" formControlName="square">
+          <p style="color: red" *ngIf="transactionForm.controls.square.hasError('pattern')&&
+transactionForm.controls.square.touched">square is positive</p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="text-center p-5"></div>

@@ -9,36 +9,34 @@
     <div class="row mb-3 form-group row">
       <label class="col-sm-4 col-form-label text-end" >Contract Code</label>
       <div class="col-sm-4">
-        <input type="text"  class="form-control" formControlName="contractId">
-        <p style="color: red" *ngIf="createContractForm.controls.contractId.hasError('required')&&
-createContractForm.controls.contractId.touched">Not null</p>
-        <p style="color: red" *ngIf="createContractForm.controls.contractId.hasError('pattern')&&
-createContractForm.controls.contractId.touched">HD-XXXX (X is 0-9)</p>
+        <input type="text"  class="form-control" formControlName="id">
+        <p style="color: red" *ngIf="createContractForm.controls.id.hasError('required')&&
+createContractForm.controls.id.touched">Not null</p>
+        <p style="color: red" *ngIf="createContractForm.controls.id.hasError('pattern')&&
+createContractForm.controls.id.touched">HD-XXXX (X is 0-9)</p>
       </div>
     </div>
   <div class="row mb-3 form-group row">
-    <label class="col-sm-4 col-form-label text-end" for="customerName">Customer Name</label>
-    <div class="col-sm-4" formControlName="customerName">
-      <select class="form-control" id="customerName" formControlName="customerName">
-        <option value="">Choose Customer Name</option>
-        <option value="Nguyen Văn A">Nguyen Văn A</option>
-        <option value="Le Văn B">Le Văn B</option>
+    <label class="col-sm-4 col-form-label text-end" for="customerName">Customer</label>
+    <div class="col-sm-4" formControlName="customer">
+      <select class="form-control" id="customerName" formControlName="customer">
+        <option value="">Choose Customer</option>
+        <option *ngFor="let customer of customers" [ngValue]="customer">{{customer.customerName}}</option>
       </select>
-      <p style="color: red" *ngIf="createContractForm.controls.customerName.hasError('required')&&
-createContractForm.controls.customerName.touched">Not null</p>
+      <p style="color: red" *ngIf="createContractForm.controls.customer.hasError('required')&&
+createContractForm.controls.customer.touched">Not null</p>
     </div>
   </div>
 
   <div class="row mb-3 form-group row">
     <label class="col-sm-4 col-form-label text-end" for="serviceName">Service</label>
     <div class="col-sm-4">
-      <select class="form-control" id="serviceName" formControlName="serviceName">
-        <option value="">Choose Service Name</option>
-        <option value="Ocean Suite">Ocean Suite</option>
-        <option value="Villa Ocean View">Villa Ocean View</option>
+      <select class="form-control" id="serviceName" formControlName="facility">
+        <option value="">Choose Service</option>
+        <option *ngFor="let facility of facilities" [ngValue]="facility">{{facility.facilityName}}</option>
       </select>
-      <p style="color: red" *ngIf="createContractForm.controls.serviceName.hasError('required')&&
-createContractForm.controls.serviceName.touched">Not null</p>
+      <p style="color: red" *ngIf="createContractForm.controls.facility.hasError('required')&&
+createContractForm.controls.facility.touched">Not null</p>
     </div>
   </div>
 

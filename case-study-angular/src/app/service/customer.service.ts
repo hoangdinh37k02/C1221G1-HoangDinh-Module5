@@ -54,7 +54,7 @@ export class CustomerService {
   //   }
   // }
   deleteCustomer(id: string): Observable<Customer> {
-    return this.http.delete<Customer>(`${API_URL}/customers/${  id}`);
+    return this.http.delete<Customer>(`${API_URL}/customers/${id}`);
   }
   // findById(id: string): Customer {
   //   for (let i = 0; i < this.customers.length ; i++) {
@@ -76,5 +76,9 @@ export class CustomerService {
   // }
   updateCustomer(id: string, customer: Customer): Observable<Customer> {
     return this.http.put<Customer>(`${API_URL}/customers/${id}`, customer);
+  }
+
+  search(value1: any, value2: any, value3: any): Observable<Customer[]> {
+    return this.http.get<Customer[]>(`${API_URL}/customers?customerName_like=${value1}&phone_like=${value2}&type_like=${value3}`);
   }
 }

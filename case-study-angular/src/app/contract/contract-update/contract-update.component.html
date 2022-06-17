@@ -2,34 +2,32 @@
 <div class="height-100 px-5 py-3">
   <div class="container-fluid">
     <div class="text-center">
-      <h2>Update Contract <b class="text-danger">{{contractForm.get('contractId').value}}</b></h2>
+      <h2>Update Contract <b class="text-danger">{{contractForm.get('id').value}}</b></h2>
     </div>
   </div>
-  <form [formGroup]="contractForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="contractForm" (ngSubmit)="onSubmit(contractForm.get('id').value)">
 
     <div class="row mb-3 form-group row">
-      <label class="col-sm-4 col-form-label text-end" for="customerName">Customer Name</label>
+      <label class="col-sm-4 col-form-label text-end" for="customerName">Customer</label>
       <div class="col-sm-4" formControlName="customerName">
-        <select class="form-control" id="customerName" formControlName="customerName">
+        <select class="form-control" id="customerName" formControlName="customer" [compareWith]="equals">
           <option value="">Choose Customer Name</option>
-          <option value="Nguyen Văn A">Nguyen Văn A</option>
-          <option value="Le Văn B">Le Văn B</option>
+          <option *ngFor="let customer of customers" [ngValue]="customer">{{customer.customerName}}</option>
         </select>
-        <p style="color: red" *ngIf="contractForm.controls.customerName.hasError('required')&&
-contractForm.controls.customerName.touched">Not null</p>
+        <p style="color: red" *ngIf="contractForm.controls.customer.hasError('required')&&
+contractForm.controls.customer.touched">Not null</p>
       </div>
     </div>
 
     <div class="row mb-3 form-group row">
       <label class="col-sm-4 col-form-label text-end" for="serviceName">Service</label>
       <div class="col-sm-4">
-        <select class="form-control" id="serviceName" formControlName="serviceName">
+        <select class="form-control" id="serviceName" formControlName="facility" [compareWith]="equals">>
           <option value="">Choose Service Name</option>
-          <option value="Ocean Suite">Ocean Suite</option>
-          <option value="Villa Ocean View">Villa Ocean View</option>
+          <option *ngFor="let facility of facilities" [ngValue]="facility">{{facility.facilityName}}</option>
         </select>
-        <p style="color: red" *ngIf="contractForm.controls.serviceName.hasError('required')&&
-contractForm.controls.serviceName.touched">Not null</p>
+        <p style="color: red" *ngIf="contractForm.controls.facility.hasError('required')&&
+contractForm.controls.facility.touched">Not null</p>
       </div>
     </div>
 

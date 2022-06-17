@@ -10,7 +10,6 @@ const API_URL = `${environment.apiUrl}`;
 })
 export class FacilityService {
 
-  facilities: Facility [] = [];
   constructor(private http: HttpClient) {
   //   this.facilities.push({facilityId: 'DV-1001', facilityName: 'Ocean Suite', area: '85', cost: '1500$',
   //     url: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/9c/59/dc/the-baga-beach-resort.jpg?w=900&h=-1&s=1'});

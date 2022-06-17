@@ -20,7 +20,7 @@ export class CustomerCreateComponent implements OnInit {
       dateOfBirth: new FormControl(),
       identify: new FormControl('', Validators.pattern(/^([0-9]{9})|([0-9]{12})$/)),
       address: new FormControl(),
-      phone: new FormControl('', Validators.pattern(/^([0]{1}[9]{1}[0]{1}[0-9]{7})|([0]{1}[9]{1}[1]{1}[0-9]{7})$/)),
+      phone: new FormControl('', Validators.pattern(/^((0)\d{9)$/)),
       email: new FormControl('', Validators.email),
       type: new FormControl()
     });
@@ -37,7 +37,7 @@ export class CustomerCreateComponent implements OnInit {
       }, e => {
         console.log(e);
       }, () => {
-          this.route.navigate(['/list']);
+          this.route.navigate(['customer/list']);
       });
     }
   }
