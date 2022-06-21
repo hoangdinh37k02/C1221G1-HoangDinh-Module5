@@ -36,29 +36,35 @@ transactionForm.controls.customer.touched">Not null</p>
         </div>
       </div>
       <div class="row mb-3 form-group row">
-        <label class="col-sm-4 col-form-label text-end" for="customerType">Transaction Type</label>
+        <label class="col-sm-4 col-form-label text-end">Transaction Type</label>
         <div class="col-sm-4">
-          <select class="form-control" id="customerType" formControlName="type">
-            <option value="">Choose Customer Type</option>
-            <option value="Đất">Đất</option>
-            <option value="Nhà và đất">Nhà và đất</option>
-          </select>
+          <label class="col-form-label" >   Đất:</label>
+          <input type="radio" value="Đất" formControlName="type">
+          <label class="col-form-label" >   Nhà và đất: </label>
+          <input type="radio" value="Nhà và đất" formControlName="type">
+          <p style="color: red" *ngIf="transactionForm.controls.type.hasError('required')&&
+transactionForm.controls.type.touched">Not null</p>
         </div>
+
       </div>
       <div class="row mb-3 form-group row">
         <label class="col-sm-4 col-form-label text-end" for="nationalId">Price (per m<sup>2</sup>)</label>
         <div class="col-sm-4">
-          <input type="text" id="nationalId" class="form-control" formControlName="price">
-          <p style="color: red" *ngIf="transactionForm.controls.price.hasError('pattern')&&
-transactionForm.controls.price.touched">price is positive</p>
+          <input type="number" id="nationalId" class="form-control" formControlName="price">
+          <p style="color: red" *ngIf="transactionForm.controls.price.hasError('required')&&
+transactionForm.controls.price.touched">Not null</p>
+          <p style="color: red" *ngIf="transactionForm.controls.price.hasError('min')&&
+transactionForm.controls.price.touched">Minimum is 100.000 VND</p>
         </div>
       </div>
       <div class="row mb-3 form-group row">
         <label class="col-sm-4 col-form-label text-end" for="nationalId">Square (m<sup>2</sup>)</label>
         <div class="col-sm-4">
-          <input type="text"  class="form-control" formControlName="square">
-          <p style="color: red" *ngIf="transactionForm.controls.square.hasError('pattern')&&
-transactionForm.controls.square.touched">square is positive</p>
+          <input type="number"  class="form-control" formControlName="square">
+          <p style="color: red" *ngIf="transactionForm.controls.square.hasError('required')&&
+transactionForm.controls.square.touched">Not null</p>
+          <p style="color: red" *ngIf="transactionForm.controls.square.hasError('min')&&
+transactionForm.controls.square.touched">Minimum is 20 m<sup>2</sup></p>
         </div>
       </div>
 

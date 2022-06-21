@@ -6,6 +6,6 @@ export interface Transaction {
   customer: Customer;
   transactionDay: string;
   type: string;
-  price: string;
-  square: string;
+  price: number;
+  square: number;
 }

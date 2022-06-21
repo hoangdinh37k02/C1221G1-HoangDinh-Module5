@@ -1,0 +1,67 @@
+{
+  "vehicle": [
+    {
+      "id": "1234",
+      "loaiXe": "Limosine",
+      "nhaXe": {
+        "id": 4,
+        "name": "Sơn Tùng"
+      },
+      "di": "Huế",
+      "den": "Đà Nẵng",
+      "soDienThoai": "0902000981",
+      "email": "trang@gmail.com",
+      "gioDi": "10:00",
+      "gioDen": "12:00"
+    },
+    {
+      "id": "1222",
+      "loaiXe": "Giường nằm",
+      "nhaXe": {
+        "id": 2,
+        "name": "Đức Long"
+      },
+      "di": "Đà Nẵng",
+      "den": "Quảng Ngãi",
+      "soDienThoai": "0935555678",
+      "email": "duclong@gmail.com",
+      "gioDi": "08:00",
+      "gioDen": "13:00"
+    },
+    {
+      "id": "1233",
+      "loaiXe": "Ghế ngồi",
+      "nhaXe": {
+        "id": 3,
+        "name": "Tuyết Vân"
+      },
+      "di": "Đà Nẵng",
+      "den": "Quảng Nam",
+      "soDienThoai": "0973516666",
+      "email": "van@gmail.com",
+      "gioDi": "14:00",
+      "gioDen": "15:30"
+    }
+  ],
+  "nhaXe": [
+    {
+      "id": 1,
+      "name": "Phương Trang"
+    },
+    {
+      "id": 2,
+      "name": "Đức Long"
+    },
+    {
+      "id": 3,
+      "name": "Tuyết Vân"
+    },
+    {
+      "id": 4,
+      "name": "Sơn Tùng"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

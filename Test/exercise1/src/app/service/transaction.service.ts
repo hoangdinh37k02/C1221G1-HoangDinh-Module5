@@ -23,4 +23,15 @@ export class TransactionService {
   addTransaction(transaction): Observable<Transaction> {
     return this.http.post<Transaction>(API_URL + '/transaction', transaction);
   }
+  search(value1: any, value2: any): Observable<Transaction[]> {
+    return this.http.get<Transaction[]>(`${API_URL}/transaction?transactionCode_like=${value1}&customer.customerCode_like=${value2}`);
+  }
+  findById(id: number): Observable<Transaction> {
+    return this.http.get<Transaction>(`${API_URL}/transaction/${id}`);
+
+  }
+  updateTransaction(id: number, transaction: Transaction): Observable<Transaction> {
+    return this.http.put<Transaction>(`${API_URL}/transaction/${id}`, transaction);
+  }
+
 }

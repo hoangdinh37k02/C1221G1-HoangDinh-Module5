@@ -1,30 +1,24 @@
-<h1 class="text-center">Customer List</h1>
+<h1 class="text-center">Transaction List</h1>
 <div class="height-100 px-5 py-3">
   <div class="text-center">
     <a routerLink="/transaction-create"><button class="btn btn-primary"><i class='bx bx-user-plus'></i></button></a>
   </div>
+  <div style="height: 10px"></div>
   <div class="container">
-<!--    <div class="row">-->
-<!--      <div class="col-3">-->
-<!--        <input type="text" class="form-control" placeholder="Search by name" #searchByName>-->
-<!--      </div>-->
-<!--      <div class="col-3">-->
-<!--        <input type="text" class="form-control" placeholder="Search by phone" #searchByPhone>-->
-<!--      </div>-->
-<!--      <div class="col-3">-->
-<!--        <select class="form-control" name="keySearch3" id="keySearch3" #searchByType>-->
-<!--          <option value="">Select customerType</option>-->
-<!--          <option value="Diamond"> Diamond</option>-->
-<!--          <option value="Platinum"> Platinum</option>-->
-<!--          <option value="Gold"> Gold</option>-->
-<!--          <option value="Silver"> Silver</option>-->
-<!--          <option value="Member"> Member</option>-->
-<!--        </select>-->
-<!--      </div>-->
-<!--      <div class="col-3 text-end">-->
-<!--        <button type="submit" class="btn btn-primary" (click)="search()">Search</button>-->
-<!--      </div>-->
-<!--    </div>-->
+    <div class="row">
+      <div class="col-3">
+        <input type="text" class="form-control" placeholder="Search by phone" #searchByCode>
+      </div>
+      <div class="col-3">
+        <select class="form-control" name="keySearch3" id="keySearch3" #searchByCustomer>
+          <option value="">Choose Customer</option>
+          <option *ngFor="let customer of customers" [ngValue]="customer">{{customer.customerCode}}</option>
+        </select>
+      </div>
+      <div class="col-6 text-end">
+        <button type="submit" class="btn btn-primary" (click)="search()">Search</button>
+      </div>
+    </div>
 
     <div style="height: 10px"></div>
     <table class="table table-light table-bordered small">
@@ -35,8 +29,8 @@
         <th scope="col">Customer Code</th>
         <th scope="col">Transaction Date</th>
         <th scope="col">Type</th>
-        <th scope="col">Price (per m2)</th>
-        <th scope="col">Square (m2)</th>
+        <th scope="col">Price (VND/m<sup>2</sup>)</th>
+        <th scope="col">Square (m<sup>2</sup>)</th>
         <th scope="col">Action</th>
       </tr>
       </thead>
@@ -52,7 +46,7 @@
 
 
         <td>
-          <a class="editSpan text-black">
+          <a class="editSpan text-black" [routerLink]="['/transaction-update',transaction.id]">
             <i class='bx bx-wrench bx-border bx-sm'></i>
           </a>
           <button type="button" class="border-0 bg-transparent deleteSpan"

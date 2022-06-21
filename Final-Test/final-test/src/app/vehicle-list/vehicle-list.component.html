@@ -1,0 +1,104 @@
+<h1 class="text-center">Danh sách các xe đăng ký đến bến xe MODANA</h1>
+<div class="height-100 px-5 py-3">
+  <div class="text-center">
+    <a routerLink="/vehicle-create"><button class="btn btn-primary"><i class='bx bx-user-plus'></i></button></a>
+  </div>
+  <div style="height: 10px"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <input type="text" class="form-control" placeholder="Tìm kiếm theo loại xe" #loaiXe>
+      </div>
+<!--      <div class="col-3">-->
+<!--        <select class="form-control" name="keySearch3" id="keySearch3" #nhaXe>-->
+<!--          <option value="">Choose Customer</option>-->
+<!--          <option *ngFor="let i of companies" [ngValue]="i">{{i.name}}</option>-->
+<!--        </select>-->
+<!--      </div>-->
+      <div class="col-3">
+        <input type="text" class="form-control" placeholder="Tìm kiếm số điện thoại" #soDienThoai>
+      </div>
+      <div class="col-6 text-end">
+        <button type="submit" class="btn btn-primary" (click)="search()">Search</button>
+      </div>
+    </div>
+
+    <div style="height: 10px"></div>
+    <table class="table table-light table-bordered small">
+      <thead class="thead thead-dark text-center">
+      <tr>
+        <th scope="col">Số xe</th>
+        <th scope="col">Loại xe</th>
+        <th scope="col">Tên nhà xe</th>
+        <th scope="col">Điểm đi</th>
+        <th scope="col">Điểm đến</th>
+        <th scope="col">Số điện thoại</th>
+        <th scope="col">Email</th>
+        <th scope="col">Giờ đi</th>
+        <th scope="col">Giờ đến</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let vehicle of vehicles">
+        <td>{{vehicle.id}}</td>
+        <td>{{vehicle.loaiXe}}</td>
+        <td>{{vehicle.nhaXe.name}}</td>
+        <td>{{vehicle.diemDi}}</td>
+        <td>{{vehicle.diemDen}}</td>
+        <td>{{vehicle.soDienThoai}}</td>
+        <td>{{vehicle.email}}</td>
+        <td>{{vehicle.gioDi}}</td>
+        <td>{{vehicle.gioDen}}</td>
+
+
+        <td>
+          <a class="editSpan text-black" [routerLink]="['/vehicle-update',vehicle.id]">
+            <i class='bx bx-wrench bx-border bx-sm'></i>
+          </a>
+          <button type="button" class="border-0 bg-transparent deleteSpan"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal" (click)="sendVehicleId(vehicle.id)">
+            <i class='bx bx-trash bx-border bx-sm'></i>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+<!--    <h3 *ngIf="vehicles.length === 0" class="text-center">Not found</h3>-->
+
+  </div>
+
+</div>
+<div style="justify-content: space-around;display: flex;">
+<!--  <pagination-controls (pageChange)="p = $event" class=" page-item"></pagination-controls>-->
+</div>
+
+
+<div class="text-center p-5"></div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Xác nhận</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>Bạn có muốn xóa thông tin xe có biển số này:
+          {{idToDelete}}
+        </div>
+        <div class="text-danger">
+          <hr>
+          KHI XÓA SẼ KHÔNG KHÔI PHỤC ĐƯỢC</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteVehicle(idToDelete)">Xóa</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

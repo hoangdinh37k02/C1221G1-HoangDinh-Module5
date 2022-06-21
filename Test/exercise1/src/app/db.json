@@ -31,7 +31,7 @@
         "phone": "0903000981"
       },
       "transactionDay": "2022-06-02",
-      "type": "Dat",
+      "type": "Nhà và đất",
       "price": "1000000",
       "square": "100"
     },
@@ -44,20 +44,7 @@
         "phone": "0903000981"
       },
       "transactionDay": "2022-06-02",
-      "type": "Dat",
-      "price": "1000000",
-      "square": "100"
-    },
-    {
-      "id": 3,
-      "transactionCode": "MGD-1001",
-      "customer": {
-        "id": 4,
-        "customerCode": "KH-1004",
-        "phone": "0903000981"
-      },
-      "transactionDay": "2022-06-02",
-      "type": "Dat",
+      "type": "Đất",
       "price": "1000000",
       "square": "100"
     },
@@ -65,14 +52,14 @@
       "id": 4,
       "transactionCode": "MGD-0910",
       "customer": {
-        "id": 2,
-        "customerCode": "KH-1002",
+        "id": 3,
+        "customerCode": "KH-1003",
         "phone": "0903000981"
       },
       "transactionDay": "2022-06-11",
       "type": "Nhà và đất",
       "price": "1000000",
-      "square": "100"
+      "square": 120
     }
   ],
   "profile": {

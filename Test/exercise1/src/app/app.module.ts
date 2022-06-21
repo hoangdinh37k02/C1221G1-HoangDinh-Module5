@@ -8,12 +8,14 @@ import {HttpClientModule} from "@angular/common/http";
 import {NgxPaginationModule} from "ngx-pagination";
 import { TransactionCreateComponent } from './transaction-create/transaction-create.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { TransactionUpdateComponent } from './transaction-update/transaction-update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TransactionComponent,
-    TransactionCreateComponent
+    TransactionCreateComponent,
+    TransactionUpdateComponent
   ],
     imports: [
         BrowserModule,

@@ -21,8 +21,8 @@ export class TransactionCreateComponent implements OnInit {
       customer: new FormControl('', Validators.required),
       transactionDay: new FormControl('', Validators.required),
       type: new FormControl('', Validators.required),
-      price: new FormControl('', [Validators.required, Validators.pattern(/^[1-9]{1}[0-9]{0,}$/)]),
-      square: new FormControl('', [Validators.required, Validators.pattern(/^[1-9]{1}[0-9]{0,}$/)]),
+      price: new FormControl('', [Validators.required, Validators.min(100000)]),
+      square: new FormControl('', [Validators.required, Validators.min(20)]),
     });
   }
 

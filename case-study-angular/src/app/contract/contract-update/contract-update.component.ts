@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {Contract} from '../../model/contract';
+import {Component, OnInit} from '@angular/core';
 import {ContractService} from '../../service/contract.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';

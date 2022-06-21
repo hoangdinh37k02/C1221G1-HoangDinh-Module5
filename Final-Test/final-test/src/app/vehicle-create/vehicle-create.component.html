@@ -1,0 +1,127 @@
+<div class="height-100 px-5 py-3">
+  <div class="container-fluid">
+    <div class="text-center">
+      <h2>Đăng kí mới phương tiện</h2>
+
+
+    </div>
+    <div style="height: 10px"></div>
+    <form [formGroup]="vehicleForm" (ngSubmit)="onSubmit()">
+
+<!--      <div class="row mb-3 form-group row">-->
+
+<!--        <label class="col-sm-4 col-form-label text-end" >Số xe</label>-->
+<!--        <div class="col-sm-4">-->
+<!--        <input type="" class="form-control" formControlName="id">-->
+<!--        </div>-->
+<!--      </div>-->
+      <div class="row mb-3 form-group row">
+
+        <label class="col-sm-4 col-form-label text-end" >Loại xe <span style="color: red;">(*)</span></label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" formControlName="loaiXe">
+          <p style="color: red" *ngIf="vehicleForm.controls.loaiXe.hasError('required')&&
+vehicleForm.controls.loaiXe.touched">Không để trống</p>
+
+        </div>
+      </div>
+      <div class="row mb-3 form-group row">
+
+        <label class="col-sm-4 col-form-label text-end" >Tên nhà xe <span style="color: red;">(*)</span></label>
+        <div class="col-sm-4">
+          <select class="form-control" formControlName="nhaXe">
+            <option value="">---Nhà xe---</option>
+            <option *ngFor="let company of companies" [ngValue]="company">{{company.name}}</option>
+          </select>
+          <p style="color: red" *ngIf="vehicleForm.controls.nhaXe.hasError('required')&&
+vehicleForm.controls.nhaXe.touched">Không để trống</p>
+        </div>
+      </div>
+
+      <div class="row mb-3 form-group row">
+        <label class="col-sm-4 col-form-label text-end" for="customerName">Điểm đi <span style="color: red;">(*)</span></label>
+        <div class="col-sm-4">
+          <select class="form-control" id="customerName" formControlName="diemDi">
+            <option value="">---Chọn điểm đi---</option>
+            <option value="Đà Nẵng">Đà Nẵng</option>
+            <option value="Huế">Huế</option>
+            <option value="Quảng Nam">Quảng Nam</option>
+            <option value="Quảng Ngãi">Quảng Ngãi</option>
+          </select>
+          <p style="color: red" *ngIf="vehicleForm.controls.diemDi.hasError('required')&&
+vehicleForm.controls.diemDi.touched">Không để trống</p>
+        </div>
+      </div>
+      <div class="row mb-3 form-group row">
+        <label class="col-sm-4 col-form-label text-end" >Điểm đến <span style="color: red;">(*)</span></label>
+        <div class="col-sm-4">
+          <select class="form-control"  formControlName="diemDen">
+            <option value="">---Chọn điểm đến---</option>
+            <option value="Đà Nẵng">Đà Nẵng</option>
+            <option value="Huế">Huế</option>
+            <option value="Quảng Nam">Quảng Nam</option>
+            <option value="Quảng Ngãi">Quảng Ngãi</option>
+          </select>
+          <p style="color: red" *ngIf="vehicleForm.controls.diemDen.hasError('required')&&
+vehicleForm.controls.diemDen.touched">Không để trống</p>
+        </div>
+      </div>
+
+      <div class="row mb-3 form-group row">
+        <label class="col-sm-4 col-form-label text-end" for="nationalId">Số điện thoại <span style="color: red;">(*)</span></label>
+        <div class="col-sm-4">
+          <input type="text" id="nationalId" class="form-control" formControlName="soDienThoai">
+          <p style="color: red" *ngIf="vehicleForm.controls.soDienThoai.hasError('required')&&
+vehicleForm.controls.soDienThoai.touched">Không để trống</p>
+          <p style="color: red" *ngIf="vehicleForm.controls.soDienThoai.hasError('pattern')&&
+vehicleForm.controls.soDienThoai.touched">Số điện thoại phải bắt đầu 090, 093 hoặc 097 và có 10 số</p>
+        </div>
+      </div>
+      <div class="row mb-3 form-group row">
+        <label class="col-sm-4 col-form-label text-end" for="nationalId">Email <span style="color: red;">(*)</span></label>
+        <div class="col-sm-4">
+          <input type="text"  class="form-control" formControlName="email">
+          <p style="color: red" *ngIf="vehicleForm.controls.email.hasError('required')&&
+vehicleForm.controls.email.touched">Không để trống</p>
+          <p style="color: red" *ngIf="vehicleForm.controls.email.hasError('email')&&
+vehicleForm.controls.email.touched">Phải đúng định dạng email</p>
+        </div>
+      </div>
+      <div class="row mb-3 form-group row">
+
+        <label class="col-sm-4 col-form-label text-end" >Giờ đi <span style="color: red;">(*)</span></label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" formControlName="gioDi">
+          <p style="color: red" *ngIf="vehicleForm.controls.gioDi.hasError('required')&&
+vehicleForm.controls.gioDi.touched">Không để trống</p>
+          <p style="color: red" *ngIf="vehicleForm.controls.gioDi.hasError('pattern')&&
+vehicleForm.controls.gioDi.touched">Phải theo định dạng hh:mm (ngày 24 giờ)</p>
+        </div>
+      </div>
+      <div class="row mb-3 form-group row">
+        <label class="col-sm-4 col-form-label text-end" >Giờ đến <span style="color: red;">(*)</span></label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" formControlName="gioDen">
+          <p style="color: red" *ngIf="vehicleForm.controls.gioDen.hasError('required')&&
+vehicleForm.controls.gioDen.touched">Không để trống</p>
+          <p style="color: red" *ngIf="vehicleForm.controls.gioDen.hasError('pattern')&&
+vehicleForm.controls.gioDen.touched">Phải theo định dạng hh:mm (ngày 24 giờ)</p>
+        </div>
+      </div>
+
+      <div class="text-center row mb-3 form-group row">
+        <div class="col-5"></div>
+        <div class="col-1">
+          <a routerLink="/vehicle-list"><button type="submit" class="btn btn-secondary">Quay về</button></a>
+        </div>
+        <div class="col-1">
+          <button type="submit" class="btn btn-primary">Tạo mới</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="text-center p-5"></div>
+
+

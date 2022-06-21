@@ -1,0 +1,73 @@
+<div class="height-100 px-5 py-3">
+  <div class="container-fluid">
+    <div class="text-center">
+      <h2>Create New Product</h2>
+      <a routerLink="/product-list"><button type="submit" class="btn btn-secondary">Back to List</button></a>
+
+    </div>
+    <div style="height: 10px"></div>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
+      <div class="row mb-3 form-group row">
+
+        <label class="col-sm-4 col-form-label text-end" >Product Code</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" formControlName="productCode">
+          <p style="color: red" *ngIf="productForm.controls.productCode.hasError('required')&&
+productForm.controls.productCode.touched">Not null</p>
+          <p style="color: red" *ngIf="productForm.controls.productCode.hasError('pattern')&&
+productForm.controls.productCode.touched">S-XXX (X is 0-9)</p>
+        </div>
+      </div>
+      <div class="row mb-3 form-group row">
+
+        <label class="col-sm-4 col-form-label text-end" >Product Name</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" formControlName="productName">
+          <p style="color: red" *ngIf="productForm.controls.productName.hasError('required')&&
+productForm.controls.productName.touched">Not null</p>
+        </div>
+      </div>
+
+      <div class="row mb-3 form-group row">
+        <label class="col-sm-4 col-form-label text-end" for="customerName">Product Type</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="customerName" formControlName="type">
+            <option value="">---Product Type---</option>
+            <option *ngFor="let type of types" [ngValue]="type">{{type.name}}</option>
+          </select>
+          <p style="color: red" *ngIf="productForm.controls.type.hasError('required')&&
+productForm.controls.type.touched">Not null</p>
+        </div>
+      </div>
+
+      <div class="row mb-3 form-group row">
+        <label class="col-sm-4 col-form-label text-end" for="nationalId">Price</label>
+        <div class="col-sm-4">
+          <input type="number" id="nationalId" class="form-control" formControlName="price">
+          <p style="color: red" *ngIf="productForm.controls.price.hasError('required')&&
+productForm.controls.price.touched">Not null</p>
+          <p style="color: red" *ngIf="productForm.controls.price.hasError('min')&&
+productForm.controls.price.touched">Minimum is 100.000 VND</p>
+        </div>
+      </div>
+      <div class="row mb-3 form-group row">
+        <label class="col-sm-4 col-form-label text-end" for="nationalId">Quantity</label>
+        <div class="col-sm-4">
+          <input type="number"  class="form-control" formControlName="quantity">
+          <p style="color: red" *ngIf="productForm.controls.quantity.hasError('required')&&
+productForm.controls.quantity.touched">Not null</p>
+          <p style="color: red" *ngIf="productForm.controls.quantity.hasError('min')&&
+productForm.controls.quantity.touched">Minimum is 1</p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="text-center p-5"></div>
+

@@ -1,0 +1,95 @@
+<h1 class="text-center">Product List</h1>
+<div class="height-100 px-5 py-3">
+  <div class="text-center">
+    <a routerLink="/product-create"><button class="btn btn-primary"><i class='bx bx-user-plus'></i></button></a>
+  </div>
+  <div style="height: 10px"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <input type="text" class="form-control" placeholder="Search by phone" #searchByName>
+      </div>
+      <div class="col-3">
+        <select class="form-control" name="keySearch3" id="keySearch3" #searchByType>
+          <option value="">Choose Customer</option>
+          <option *ngFor="let type of types" [ngValue]="type">{{type.name}}</option>
+        </select>
+      </div>
+      <div class="col-6 text-end">
+        <button type="submit" class="btn btn-primary" (click)="search()">Search</button>
+      </div>
+    </div>
+
+    <div style="height: 10px"></div>
+    <table class="table table-light table-bordered small">
+      <thead class="thead thead-dark text-center">
+      <tr>
+        <th scope="col">N0</th>
+        <th scope="col">Product Code</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of products|paginate : { itemsPerPage: 5, currentPage: p },index as index">
+        <td>{{index+1}}</td>
+        <td>{{product.productCode}}</td>
+        <td>{{product.productName}}</td>
+        <td>{{product.type.name}}</td>
+        <td>{{product.price|currency: 'VND'}}</td>
+        <td>{{product.quantity}}</td>
+
+
+        <td>
+          <a class="editSpan text-black" [routerLink]="['/product-update',product.id]">
+            <i class='bx bx-wrench bx-border bx-sm'></i>
+          </a>
+          <button type="button" class="border-0 bg-transparent deleteSpan"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal" (click)="sendTransactionId(product.id, product.productName)">
+            <i class='bx bx-trash bx-border bx-sm'></i>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <h3 *ngIf="products.length === 0" class="text-center">Not found</h3>
+
+  </div>
+
+</div>
+<div style="justify-content: space-around;display: flex;">
+  <pagination-controls (pageChange)="p = $event" class=" page-item"></pagination-controls>
+</div>
+
+
+<div class="text-center p-5"></div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirm</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>Do you want to delete this transaction<BR>
+          {{productName}}
+        </div>
+        <div class="text-danger">
+          <hr>
+          WARNING: YOU CAN NOT ROLLBACK AFTER DELETE!!!</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteTransaction(idToDelete)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

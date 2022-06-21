@@ -68,6 +68,6 @@ export class ContractService {
   }
 
   search(value1: any, value2: any): Observable<Contract[]> {
-    return this.http.get<Contract[]>(`${API_URL}/contracts?facility.facilityName_like=${value1}&customer.customerName_like=${value2}`);
+      return this.http.get<Contract[]>(`${API_URL}/contracts?facility.facilityName_like=${value1}&customer.customerName_like=${value2}`);
   }
 }
